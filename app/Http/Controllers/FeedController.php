@@ -6,6 +6,7 @@ use App\Category;
 use App\Feed;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 
@@ -13,7 +14,7 @@ class FeedController extends Controller
 {
     function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except'=>['show']]);
     }
     /**
      * Display a listing of the resource.
@@ -136,9 +137,16 @@ class FeedController extends Controller
      * @param  \App\Feed  $feed
      * @return \Illuminate\Http\Response
      */
-    public function show(Feed $feed)
+    public function show($hash)
     {
-        //
+        $lang=App::getLocale();
+        $feed=Feed::where([
+            'lang'=>$lang,
+            'hash'=>$hash
+            ])->firstOrFail();
+        $feed->views=$feed->views+1;
+        $feed->save();
+        return view('front.factory',compact('feed'));
     }
 
     /**

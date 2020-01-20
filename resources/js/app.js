@@ -15,19 +15,24 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-
+import translations from '../lang/vue-translations.json'
+//php artisan lang:js resources/lang/vue-translations.json --json
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('user-component', require('./components/UserComponent.vue').default);
 Vue.component('feeden-component', require('./components/en/FeedenComponent.vue').default);
+Vue.component('form-component', require('./components/front/FormComponent.vue').default);
+Vue.component('searchresult-component', require('./components/front/SearchresultComponent.vue').default);
+Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 
 
 
 const CONFIG = {
     API_URL: 'http://localhost/turkwizard/public/api/',
-    PATH: '/turkwizard/public'
+    PATH: '/turkwizard/public',
+    LANG:translations
 }
 
 export default CONFIG;

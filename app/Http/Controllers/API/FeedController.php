@@ -31,6 +31,20 @@ class FeedController extends Controller
         return $feeds;
     }
 
+    public function deepSearch(Request $request)
+    {
+        $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
+            ->orWhere('description', 'LIKE', '%' . $request->keywords . '%')
+            ->orWhere('tags', 'LIKE', '%' . $request->keywords . '%')
+            ->with('category')
+            ->orderBy('rate','DESC')
+            ->orderBy('recommended','DESC')
+            ->orderBy('views','DESC')
+            ->paginate(10);
+
+        return $feeds;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

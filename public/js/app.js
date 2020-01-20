@@ -1829,6 +1829,175 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app */ "./resources/js/app.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CategoryComponent.vue",
+  props: ["auth", "lang", "flag"],
+  data: function data() {
+    return {
+      path: _app__WEBPACK_IMPORTED_MODULE_0__["default"].PATH,
+      loading: false,
+      categories: [],
+      keywords: null,
+      errors: []
+    };
+  },
+  created: function created() {
+    this.getResults();
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      if (this.keywords.length > 2 || this.keywords.length === 0) {
+        this.search();
+      }
+    }
+  },
+  methods: {
+    getResults: function getResults() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.loading = true;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "lang/categories/" + this.lang + "/?page=" + page + "&api_token=" + this.auth.api_token).then(function (res) {
+        _this.categories = res.data;
+        _this.loading = false;
+      });
+    },
+    search: function search(page) {
+      var _this2 = this;
+
+      this.loading = true;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "search/categories/" + this.lang + "?page=" + page + "&keywords=" + this.keywords + "&api_token=" + this.auth.api_token).then(function (res) {
+        _this2.categories = res.data;
+        _this2.loading = false;
+      });
+    },
+    removeCat: function removeCat(cat) {
+      var _this3 = this;
+
+      this.loading = false;
+      axios["delete"](_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "categories/" + cat.id + "?api_token=" + this.auth.api_token).then(function (res) {
+        _this3.loading = false;
+        toastr["success"]("it's removed!", "Success");
+
+        _this3.getResults(1);
+      })["catch"](function (error) {
+        _this3.loading = false;
+
+        if (error.response.status === 422) {
+          _this3.errors = error.response.data.errors || {};
+        } else {
+          toastr["error"]("Unexpected Error??", "Error");
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -2319,6 +2488,232 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           toastr["error"]("Unexpected Error??", "Error");
         }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../app */ "./resources/js/app.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "FormComponent.vue",
+  props: ["lang"],
+  data: function data() {
+    return {
+      path: _app__WEBPACK_IMPORTED_MODULE_0__["default"].PATH,
+      loading: false,
+      local: _app__WEBPACK_IMPORTED_MODULE_0__["default"].LANG,
+      success: false,
+      feed: {
+        name: null,
+        email: null,
+        phone: null,
+        service: 0,
+        note: null
+      },
+      errors: []
+    };
+  },
+  created: function created() {},
+  watch: {},
+  methods: {
+    sendFeed: function sendFeed() {
+      var _this = this;
+
+      this.loading = true;
+      axios.post(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "front/form/forward", this.feed).then(function (res) {
+        _this.loading = false;
+        _this.success = true;
+
+        _this.clearFields();
+      })["catch"](function (error) {
+        _this.loading = false;
+
+        if (error.response.status === 422) {
+          _this.errors = error.response.data.errors || {};
+        } else {
+          $("#addFeed").modal("hide");
+          /*toastr["error"](
+              this.local[this.lang + ".alerts"]["error"],
+              this.local[this.lang + ".alerts"]["err"]
+          );*/
+
+          _this.clearFields();
+        }
+      });
+    },
+    clearFields: function clearFields() {
+      this.feed.name = this.feed.email = this.feed.phone = this.feed.note = this.feed.note = this.feed.service = null;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../app */ "./resources/js/app.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SearchresultComponent.vue",
+  props: ["lang", "data", 'keywords'],
+  data: function data() {
+    return {
+      path: _app__WEBPACK_IMPORTED_MODULE_0__["default"].PATH,
+      loading: false,
+      local: _app__WEBPACK_IMPORTED_MODULE_0__["default"].LANG,
+      errors: [],
+      feeds: []
+    };
+  },
+  created: function created() {
+    this.getResults();
+  },
+  watch: {
+    keywords: function keywords(after, before) {
+      if (this.keywords.length > 2 || this.keywords.length === 0) {
+        this.getResults();
+      }
+    }
+  },
+  methods: {
+    getResults: function getResults() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.loading = true;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "search/deep/feeds?page=" + page + "&keywords=" + this.keywords).then(function (res) {
+        _this.feeds = res.data;
+        _this.loading = false;
       });
     }
   }
@@ -20525,6 +20920,222 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "card card-primary card-outline" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("i", {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.loading,
+              expression: "loading"
+            }
+          ],
+          staticClass: "fas fa-cog fa-spin px-2 text-primary"
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-tools" }, [
+          _c("div", { staticClass: "input-group input-group-sm" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.keywords,
+                  expression: "keywords"
+                }
+              ],
+              staticClass: "form-control float-right",
+              attrs: {
+                type: "text",
+                name: "table_search",
+                placeholder: "Search"
+              },
+              domProps: { value: _vm.keywords },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.keywords = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(3)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body p-0" }, [
+        _c(
+          "table",
+          { staticClass: "table table-striped table-hover table-head-fixed" },
+          [
+            _c("thead", [
+              _c("tr", [
+                _c("th"),
+                _vm._v(" "),
+                _c("th", [_vm._v("Name")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Description")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Hash")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Date")]),
+                _vm._v(" "),
+                _c("th", [
+                  _c("span", { staticClass: "badge badge-info" }, [
+                    _vm._v(_vm._s(_vm.categories.total))
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { class: "flag-icon flag-icon-" + this.flag })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.categories.data, function(cat) {
+                return _c("tr", { key: cat.id }, [
+                  _c("td", [
+                    _c("img", {
+                      staticClass: "img-thumbnail",
+                      attrs: { src: cat.cover, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(cat.name) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(cat.description))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(cat.hash))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(cat.created_at))]),
+                  _vm._v(" "),
+                  _c("td", { attrs: { width: "20%" } }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-sm btn-info text-white",
+                        attrs: {
+                          href: _vm.path + "/admin/category/edit/" + cat.id,
+                          role: "button"
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-edit" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-sm btn-danger",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.removeCat(cat)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-trash" })]
+                    )
+                  ])
+                ])
+              }),
+              0
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "p-2" },
+          [
+            _c("pagination", {
+              attrs: { data: Object.assign({}, _vm.categories) },
+              on: { "pagination-change-page": _vm.getResults }
+            })
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "en" } }, [
+      _c("i", { staticClass: "flag-icon flag-icon-us mr-1" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "ar" } }, [
+      _c("i", { staticClass: "flag-icon flag-icon-sa mr-1" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "tr" } }, [
+      _c("i", { staticClass: "flag-icon flag-icon-tr mr-1" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-default", attrs: { type: "submit" } },
+        [_c("i", { staticClass: "fas fa-search" })]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -21233,6 +21844,509 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h5", { staticClass: "text-warning text-center" }, [
+      _vm._v(_vm._s(_vm.local[_vm.lang + ".frontform"]["menu"]["title"]))
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.sendFeed($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "input-group" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.feed.name,
+                expression: "feed.name"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              placeholder:
+                _vm.local[_vm.lang + ".frontform"]["menu"]["name"] + "..",
+              required: ""
+            },
+            domProps: { value: _vm.feed.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.feed, "name", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.name
+          ? _c("div", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.name[0]))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group mt-3" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.feed.email,
+                expression: "feed.email"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "email",
+              placeholder:
+                _vm.local[_vm.lang + ".frontform"]["menu"]["email"] + "..",
+              required: ""
+            },
+            domProps: { value: _vm.feed.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.feed, "email", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.email
+          ? _c("div", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.email[0]))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group mt-3" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.feed.phone,
+                expression: "feed.phone"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              placeholder:
+                _vm.local[_vm.lang + ".frontform"]["menu"]["phone"] + "..",
+              required: ""
+            },
+            domProps: { value: _vm.feed.phone },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.feed, "phone", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.phone
+          ? _c("div", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.phone[0]))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group mt-3" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.feed.service,
+                  expression: "feed.service"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { name: "service", required: "" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.feed,
+                    "service",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c(
+                "option",
+                { attrs: { value: "0", selected: "", disabled: "" } },
+                [
+                  _vm._v(
+                    _vm._s(
+                      _vm.local[_vm.lang + ".frontform"]["menu"][
+                        "service_title"
+                      ]
+                    )
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _vm._l(
+                _vm.local[_vm.lang + ".frontform"]["menu"]["service"],
+                function(item, index) {
+                  return _c(
+                    "option",
+                    { key: index, domProps: { value: item } },
+                    [_vm._v(_vm._s(item))]
+                  )
+                }
+              )
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.service
+          ? _c("div", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.service[0]))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group mt-3" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.feed.note,
+                expression: "feed.note"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              placeholder:
+                _vm.local[_vm.lang + ".frontform"]["menu"]["note"] + "..",
+              cols: "30",
+              rows: "5",
+              required: ""
+            },
+            domProps: { value: _vm.feed.note },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.feed, "note", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm.errors && _vm.errors.note
+          ? _c("div", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.note[0]))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "text-center my-3" }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.loading,
+                    expression: "loading"
+                  }
+                ],
+                staticClass: "fas fa-cog fa-spin"
+              }),
+              _vm._v(" "),
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.loading,
+                    expression: "!loading"
+                  }
+                ],
+                staticClass: "fas fa-cog"
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "px-1" }, [
+                _vm._v(_vm._s(_vm.local[_vm.lang + ".frontform"]["send_query"]))
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.success,
+                expression: "success"
+              }
+            ],
+            staticClass: "alert alert-success alert-dismissible fade show",
+            attrs: { role: "alert" }
+          },
+          [
+            _c("strong", [_vm._v("Holy guacamole!")]),
+            _vm._v(
+              " You should check in on some of those fields below.\n            "
+            ),
+            _vm._m(5)
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-envelope" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-user" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-phone" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-list-ul" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-comment-alt" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "input-group" }, [
+      _c("div", { staticClass: "input-group-prepend" }, [
+        _c("div", { staticClass: "input-group-text" }, [
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.loading,
+                expression: "loading"
+              }
+            ],
+            staticClass: "fas fa-cog text-primary fa-spin "
+          }),
+          _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.loading,
+                expression: "!loading"
+              }
+            ],
+            staticClass: "fas fa-cog text-primary "
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.keywords,
+            expression: "keywords"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Type words to search.." },
+        domProps: { value: _vm.keywords },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.keywords = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("section", { staticClass: "row mb-5" }, [
+      _c(
+        "div",
+        { staticClass: "col" },
+        _vm._l(_vm.feeds.data, function(feed) {
+          return _c("div", { key: feed.id, staticClass: "mb-4" }, [
+            _c("img", {
+              staticClass: "img-thumbnail",
+              attrs: { src: feed.cover, width: "75px", alt: "" }
+            }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "category/" + feed.category.hash } }, [
+              _c("span", { staticClass: "badge badge-primary mx-1" }, [
+                _vm._v(_vm._s(feed.category.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "#" } }, [
+              _c("h5", { staticStyle: { display: "inline" } }, [
+                _vm._v(_vm._s(feed.name) + ".")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "mx-4" }, [
+              _c("i", { staticClass: "fas fa-map-marker-alt text-primary" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(feed.city))])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-muted" }, [_vm._v(_vm._s(feed.tags))])
+          ])
+        }),
+        0
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -33384,6 +34498,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lang/vue-translations.json */ "./resources/lang/vue-translations.json");
+var _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../lang/vue-translations.json */ "./resources/lang/vue-translations.json", 1);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -33399,6 +34515,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+
+ //php artisan lang:js resources/lang/vue-translations.json --json
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
@@ -33406,9 +34524,13 @@ Vue.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ ".
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('user-component', __webpack_require__(/*! ./components/UserComponent.vue */ "./resources/js/components/UserComponent.vue")["default"]);
 Vue.component('feeden-component', __webpack_require__(/*! ./components/en/FeedenComponent.vue */ "./resources/js/components/en/FeedenComponent.vue")["default"]);
+Vue.component('form-component', __webpack_require__(/*! ./components/front/FormComponent.vue */ "./resources/js/components/front/FormComponent.vue")["default"]);
+Vue.component('searchresult-component', __webpack_require__(/*! ./components/front/SearchresultComponent.vue */ "./resources/js/components/front/SearchresultComponent.vue")["default"]);
+Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
 var CONFIG = {
   API_URL: 'http://localhost/turkwizard/public/api/',
-  PATH: '/turkwizard/public'
+  PATH: '/turkwizard/public',
+  LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };
 /* harmony default export */ __webpack_exports__["default"] = (CONFIG);
 /**
@@ -33465,6 +34587,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/CategoryComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/CategoryComponent.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true& */ "./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true&");
+/* harmony import */ var _CategoryComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CategoryComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CategoryComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3991b978",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CategoryComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CategoryComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CategoryComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CategoryComponent.vue?vue&type=template&id=3991b978&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryComponent_vue_vue_type_template_id_3991b978_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -33672,6 +34863,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FeedenComponent_vue_vue_type_template_id_335cfdfb_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/front/FormComponent.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/front/FormComponent.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true& */ "./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true&");
+/* harmony import */ var _FormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0a1eb0d0",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/front/FormComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/FormComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/FormComponent.vue?vue&type=template&id=0a1eb0d0&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormComponent_vue_vue_type_template_id_0a1eb0d0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/front/SearchresultComponent.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/front/SearchresultComponent.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchresultComponent.vue?vue&type=template&id=bd6f9192& */ "./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192&");
+/* harmony import */ var _SearchresultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchresultComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SearchresultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/front/SearchresultComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchresultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchresultComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/SearchresultComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchresultComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchresultComponent.vue?vue&type=template&id=bd6f9192& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/front/SearchresultComponent.vue?vue&type=template&id=bd6f9192&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchresultComponent_vue_vue_type_template_id_bd6f9192___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/lang/vue-translations.json":
+/*!**********************************************!*\
+  !*** ./resources/lang/vue-translations.json ***!
+  \**********************************************/
+/*! exports provided: ar.auth, ar.factory, ar.frontform, ar.fronthome, ar.pagination, ar.passwords, ar.validation, en.auth, en.factory, en.frontform, en.fronthome, en.pagination, en.passwords, en.validation, tr.auth, tr.factory, tr.frontform, tr.fronthome, tr.pagination, tr.passwords, tr.validation, vue-translations.strings, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"ar.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"ar.factory\":{\"menu\":{\"category\":\"الفئة\",\"city\":\"المدينة\",\"description\":\"وصف المصنع\",\"gallery\":\"الصور\",\"products\":\"المنتجات \",\"website\":\"الموقع الاكتروني\"}},\"ar.frontform\":{\"menu\":{\"email\":\"البريد الاكتروني\",\"name\":\"الاسم\",\"note\":\"ملاحظاتك وتفاصيل الطلب\",\"phone\":\"رقم الهاتف.\",\"service\":[\"اريد قائمة مصانع \",\"اريد قائمة اسعار\",\"خدمة توصيل للمصانع المناسبة\",\"متابعة الصفقة بالكامل \"],\"service_title\":\"اختر الخدمة \",\"title\":\"ماذا تحتاج\"},\"send_query\":\"ارسل الطلب\"},\"ar.fronthome\":{\"menu\":{\"about\":\"من نحن\",\"add_your_factory\":\"من اجل مصانعنا\",\"contact\":\"تواصل معنا\",\"home\":\"الصفحة الرئيسية\",\"most_popular\":\"الاكثر زيارة\",\"recommended\":\"الموصى بها\",\"search\":\"البحث\",\"search_hint\":\" ابحث عن مصنع او منتج..\",\"services\":{\"free\":\"الخدمات المجانية\",\"paid\":\"الخدمات المدفوعة\",\"parent\":\"خدماتنا\"}}},\"ar.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"ar.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"ar.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"service_title\":\"Select Service\",\"title\":\"Request VIP Service\"},\"send_query\":\"Send Query\"},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"tr.factory\":{\"menu\":{\"category\":\"Kategori\",\"city\":\"şehir\",\"description\":\"fabrika hakkında \",\"gallery\":\"resimler\",\"products\":\"ürünler\",\"website\":\"web sitesi\"}},\"tr.frontform\":{\"menu\":{\"email\":\"e-posta\",\"name\":\"adınız\",\"note\":\"notlarınız\",\"phone\":\"telefon numaranız\",\"service\":[\"Fabrikalar listesi\",\"fiyat teklifleri\",\"fabrikalara ulaşım\",\"siparişiniz takip etmek ve tamamlamak\"],\"service_title\":\"servisi seçiniz\",\"title\":\"nasıl yardımcı olabiliriz\"},\"send_query\":\"Sorgu Gönder\"},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"tr.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"tr.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"tr.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"vue-translations.strings\":{\"ar.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"ar.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"ar.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"service_title\":\"Select Service\",\"title\":\"Request VIP Service\"},\"send_query\":\"Send Query\"},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"tr.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"vue-translations.strings\":{\"ar.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"ar.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"ar.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"service_title\":\"Select Service\",\"title\":\"Request VIP Service\"}},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"tr.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"vue-translations.strings\":{\"ar.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"ar.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"ar.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"tr.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"],\"title\":\"Request VIP Service\"}},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"vue-translations.strings\":{\"ar.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"ar.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"الاسم كاملا\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"ar.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.factory\":{\"menu\":{\"category\":\"Category\",\"city\":\"City\",\"description\":\"Description\",\"gallery\":\"Gallery\",\"products\":\"Products\",\"website\":\"Website\"}},\"tr.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"most_popular\":\"Most Popular\",\"recommended\":\"Recommended\",\"search\":\"Search\",\"search_hint\":\"Search for anything..\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"vue-translations.strings\":{\"ar.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"الاسم كاملا\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"ar.fronthome\":{\"menu\":{\"about\":\"من نحن\",\"add_your_factory\":\"اضف مصنعك\",\"contact\":\"اتصل بنا\",\"home\":\"الرئيسية\",\"services\":{\"free\":\"الخدمة المجانية\",\"paid\":\" الخدمة المدفوعة\",\"parent\":\"خدماتنا\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.frontform\":{\"menu\":{\"email\":\"Your Email\",\"name\":\"Your Name\",\"note\":\"Your Note\",\"phone\":\"Your Phone No.\",\"service\":[\"Select Service\",\"Send me factories list\",\"Send me prices list\",\"Delivery and recommendation\",\"Follow the deal\"]}},\"tr.fronthome\":{\"menu\":{\"about\":\"hakkımızda \",\"add_your_factory\":\"fabrikanızı ekleyin\",\"contact\":\"bize ulaşın\",\"home\":\"anasayfa\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"hizmetlerimiz \"}}},\"vue-translations.strings\":{\"ar.fronthome\":{\"menu\":{\"about\":\"من نحن\",\"add_your_factory\":\"اضف مصنعك\",\"contact\":\"اتصل بنا\",\"home\":\"الرئيسية\",\"services\":{\"free\":\"الخدمة المجانية\",\"paid\":\" الخدمة المدفوعة\",\"parent\":\"خدماتنا\"}}},\"en.auth\":{\"failed\":\"These credentials do not match our records.\",\"throttle\":\"Too many login attempts. Please try again in :seconds seconds.\"},\"en.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}},\"en.pagination\":{\"next\":\"Next &raquo;\",\"previous\":\"&laquo; Previous\"},\"en.passwords\":{\"password\":\"Passwords must be at least eight characters and match the confirmation.\",\"reset\":\"Your password has been reset!\",\"sent\":\"We have e-mailed your password reset link!\",\"token\":\"This password reset token is invalid.\",\"user\":\"We can't find a user with that e-mail address.\"},\"en.validation\":{\"accepted\":\"The :attribute must be accepted.\",\"active_url\":\"The :attribute is not a valid URL.\",\"after\":\"The :attribute must be a date after :date.\",\"after_or_equal\":\"The :attribute must be a date after or equal to :date.\",\"alpha\":\"The :attribute may only contain letters.\",\"alpha_dash\":\"The :attribute may only contain letters, numbers, dashes and underscores.\",\"alpha_num\":\"The :attribute may only contain letters and numbers.\",\"array\":\"The :attribute must be an array.\",\"attributes\":[],\"before\":\"The :attribute must be a date before :date.\",\"before_or_equal\":\"The :attribute must be a date before or equal to :date.\",\"between\":{\"array\":\"The :attribute must have between :min and :max items.\",\"file\":\"The :attribute must be between :min and :max kilobytes.\",\"numeric\":\"The :attribute must be between :min and :max.\",\"string\":\"The :attribute must be between :min and :max characters.\"},\"boolean\":\"The :attribute field must be true or false.\",\"confirmed\":\"The :attribute confirmation does not match.\",\"custom\":{\"attribute-name\":{\"rule-name\":\"custom-message\"}},\"date\":\"The :attribute is not a valid date.\",\"date_equals\":\"The :attribute must be a date equal to :date.\",\"date_format\":\"The :attribute does not match the format :format.\",\"different\":\"The :attribute and :other must be different.\",\"digits\":\"The :attribute must be :digits digits.\",\"digits_between\":\"The :attribute must be between :min and :max digits.\",\"dimensions\":\"The :attribute has invalid image dimensions.\",\"distinct\":\"The :attribute field has a duplicate value.\",\"email\":\"The :attribute must be a valid email address.\",\"ends_with\":\"The :attribute must end with one of the following: :values\",\"exists\":\"The selected :attribute is invalid.\",\"file\":\"The :attribute must be a file.\",\"filled\":\"The :attribute field must have a value.\",\"gt\":{\"array\":\"The :attribute must have more than :value items.\",\"file\":\"The :attribute must be greater than :value kilobytes.\",\"numeric\":\"The :attribute must be greater than :value.\",\"string\":\"The :attribute must be greater than :value characters.\"},\"gte\":{\"array\":\"The :attribute must have :value items or more.\",\"file\":\"The :attribute must be greater than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be greater than or equal :value.\",\"string\":\"The :attribute must be greater than or equal :value characters.\"},\"image\":\"The :attribute must be an image.\",\"in\":\"The selected :attribute is invalid.\",\"in_array\":\"The :attribute field does not exist in :other.\",\"integer\":\"The :attribute must be an integer.\",\"ip\":\"The :attribute must be a valid IP address.\",\"ipv4\":\"The :attribute must be a valid IPv4 address.\",\"ipv6\":\"The :attribute must be a valid IPv6 address.\",\"json\":\"The :attribute must be a valid JSON string.\",\"lt\":{\"array\":\"The :attribute must have less than :value items.\",\"file\":\"The :attribute must be less than :value kilobytes.\",\"numeric\":\"The :attribute must be less than :value.\",\"string\":\"The :attribute must be less than :value characters.\"},\"lte\":{\"array\":\"The :attribute must not have more than :value items.\",\"file\":\"The :attribute must be less than or equal :value kilobytes.\",\"numeric\":\"The :attribute must be less than or equal :value.\",\"string\":\"The :attribute must be less than or equal :value characters.\"},\"max\":{\"array\":\"The :attribute may not have more than :max items.\",\"file\":\"The :attribute may not be greater than :max kilobytes.\",\"numeric\":\"The :attribute may not be greater than :max.\",\"string\":\"The :attribute may not be greater than :max characters.\"},\"mimes\":\"The :attribute must be a file of type: :values.\",\"mimetypes\":\"The :attribute must be a file of type: :values.\",\"min\":{\"array\":\"The :attribute must have at least :min items.\",\"file\":\"The :attribute must be at least :min kilobytes.\",\"numeric\":\"The :attribute must be at least :min.\",\"string\":\"The :attribute must be at least :min characters.\"},\"not_in\":\"The selected :attribute is invalid.\",\"not_regex\":\"The :attribute format is invalid.\",\"numeric\":\"The :attribute must be a number.\",\"present\":\"The :attribute field must be present.\",\"regex\":\"The :attribute format is invalid.\",\"required\":\"The :attribute field is required.\",\"required_if\":\"The :attribute field is required when :other is :value.\",\"required_unless\":\"The :attribute field is required unless :other is in :values.\",\"required_with\":\"The :attribute field is required when :values is present.\",\"required_with_all\":\"The :attribute field is required when :values are present.\",\"required_without\":\"The :attribute field is required when :values is not present.\",\"required_without_all\":\"The :attribute field is required when none of :values are present.\",\"same\":\"The :attribute and :other must match.\",\"size\":{\"array\":\"The :attribute must contain :size items.\",\"file\":\"The :attribute must be :size kilobytes.\",\"numeric\":\"The :attribute must be :size.\",\"string\":\"The :attribute must be :size characters.\"},\"starts_with\":\"The :attribute must start with one of the following: :values\",\"string\":\"The :attribute must be a string.\",\"timezone\":\"The :attribute must be a valid zone.\",\"unique\":\"The :attribute has already been taken.\",\"uploaded\":\"The :attribute failed to upload.\",\"url\":\"The :attribute format is invalid.\",\"uuid\":\"The :attribute must be a valid UUID.\"},\"tr.fronthome\":{\"menu\":{\"about\":\"About us\",\"add_your_factory\":\"Add your Factory\",\"contact\":\"Contact us\",\"home\":\"Home\",\"services\":{\"free\":\"Free Services\",\"paid\":\"Paid Services\",\"parent\":\"Services\"}}}}}}}}}}");
 
 /***/ }),
 

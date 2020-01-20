@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Feed extends Model
 {
+    protected $appends = ['cover', 'pics'];
+
     function category()
     {
         return $this->belongsTo(\App\Category::class);
@@ -15,7 +17,7 @@ class Feed extends Model
 
     public function getCreatedAtAttribute($date)
     {
-        return Carbon::createFromTimeStamp($date)->diffForHumans();
+        return Carbon::createFromDate($date)->diffForHumans();
     }
 
     public function getCoverAttribute()

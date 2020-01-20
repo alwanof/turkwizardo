@@ -118,13 +118,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link active">
+                                <a href="{{route('home')}}" class="nav-link {{ (strpos(Route::currentRouteName(), 'home') === 0) ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('admin.users')}}" class="nav-link">
+                                <a href="{{route('admin.users')}}" class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.users') === 0) ? 'active' : '' }}">
                                     <i class="fas fa-users nav-icon"></i>
                                     <p>Users</p>
                                 </a>
@@ -133,7 +133,7 @@
                         </ul>
 
                     </li>
-                    <li class="nav-item has-treeview">
+                    <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active">
                                 <i class="fas fa-plus-circle"></i>
                             <p>
@@ -143,14 +143,14 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('feeds.create')}}" class="nav-link">
+                                <a href="{{route('feeds.create')}}" class="nav-link {{ (strpos(Route::currentRouteName(), 'feeds.create') === 0) ? 'active' : '' }}">
                                         <i class="fas fa-plus"></i>
                                     <i class="fas fa-industry"></i>
                                     <p>Feeds</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('categories.create')}}" class="nav-link {{ (strpos(Route::currentRouteName(), 'categories.create') === 0) ? 'active' : '' }}">
                                         <i class="fas fa-plus"></i>
                                     <i class="far fa-folder"></i>
                                     <p>Categories</p>
@@ -176,7 +176,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('categories','en')}}" class="nav-link">
                                     <i class="far fa-folder"></i>
                                     <p>Categories</p>
                                 </a>
@@ -201,7 +201,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('categories','ar')}}" class="nav-link">
                                     <i class="far fa-folder"></i>
                                     <p>Categories</p>
                                 </a>
@@ -226,7 +226,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('categories','tr')}}" class="nav-link">
                                     <i class="far fa-folder"></i>
                                     <p>Categories</p>
                                 </a>
@@ -277,7 +277,7 @@
             by Marasiel Team
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2019 <a href="https://marasiel.com">marasiel.com</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; {{date('Y')}} <a href="https://turkwizard.com">Turkwizard DP. LTD.</a>.</strong> All rights reserved.
     </footer>
 </div>
 <!-- ./wrapper -->

@@ -34525,7 +34525,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 Vue.component('user-component', __webpack_require__(/*! ./components/UserComponent.vue */ "./resources/js/components/UserComponent.vue")["default"]);
 Vue.component('feeden-component', __webpack_require__(/*! ./components/en/FeedenComponent.vue */ "./resources/js/components/en/FeedenComponent.vue")["default"]);
 Vue.component('form-component', __webpack_require__(/*! ./components/front/FormComponent.vue */ "./resources/js/components/front/FormComponent.vue")["default"]);
-Vue.component('searchresult-co mponent', __webpack_require__(/*! ./components/front/SearchresultComponent.vue */ "./resources/js/components/front/SearchresultComponent.vue")["default"]);
+Vue.component('searchresult-component', __webpack_require__(/*! ./components/front/SearchresultComponent.vue */ "./resources/js/components/front/SearchresultComponent.vue")["default"]);
 Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
 var CONFIG = {
   //API_URL: 'http://localhost/turkwizard/public/api/',

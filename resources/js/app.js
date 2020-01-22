@@ -24,7 +24,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('user-component', require('./components/UserComponent.vue').default);
 Vue.component('feeden-component', require('./components/en/FeedenComponent.vue').default);
 Vue.component('form-component', require('./components/front/FormComponent.vue').default);
-Vue.component('searchresult-co mponent', require('./components/front/SearchresultComponent.vue').default);
+Vue.component('searchresult-component', require('./components/front/SearchresultComponent.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 
 

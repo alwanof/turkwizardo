@@ -2,19 +2,19 @@
 
 return [
     'menu'=>[
-        'home'=>'Home',
-        'about'=>'About us',
+        'home'=>'anasayfa',
+        'about'=>'hakkımızda',
         'services'=>[
-            'parent'=>'Services',
-            'free'=>'Free Services',
-            'paid'=>'Paid Services'
+            'parent'=>'hizmetler',
+            'free'=>'ücretsiz hizmetler',
+            'paid'=>'ücretli hizmetler'
         ],
-        'contact'=>'Contact us',
-        'add_your_factory'=>'Add your Factory',
-        'search'=>'Search',
-        'search_hint'=>'Search for anything..',
-        'recommended'=>'Recommended',
-        'most_popular'=>'Most Popular',
+        'contact'=>'iletişim',
+        'add_your_factory'=>'fabrikalara hizmet',
+        'search'=>'ara',
+        'search_hint'=>'istediğin şeyi bul..',
+        'recommended'=>'tavsiye',
+        'most_popular'=>'en çok ziyaret',
         'categories'=>'Kategoriler'
 
 

@@ -22326,7 +22326,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [
+            _c("a", { attrs: { href: "factory/" + feed.hash } }, [
               _c("h5", { staticStyle: { display: "inline" } }, [
                 _vm._v(_vm._s(feed.name) + ".")
               ])

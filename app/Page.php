@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-    function childs(){
+    //protected $appends=['childs','parrent'];
+    function getChildsAttribute(){
         return Page::where('mainPageID',$this->id)->get();
     }
 
-    function parrent(){
+    function getParrentAttribute(){
         return Page::find($this->mainPageID);
     }
 }

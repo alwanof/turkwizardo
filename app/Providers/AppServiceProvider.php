@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,5 +30,13 @@ class AppServiceProvider extends ServiceProvider
         $lang = App::getLocale();
         $value = (session('lang')) ? session('lang') : $lang;
         session(['lang' => $value]);
+
+        View::composer('includes.nav',function ($view) {
+            $pages=\App\Page::where([
+                'lang'=>App::getLocale(),
+                'mainPageID'=>0
+            ])->orderBy('formTitle','asc')->get();
+            $view->with('pages', $pages);
+        });
     }
 }

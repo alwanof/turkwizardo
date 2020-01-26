@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PageController extends Controller
 {
@@ -44,9 +45,15 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show($hash)
     {
-        //
+        $lang=App::getLocale();
+        $page=Page::where([
+            'lang'=>$lang,
+            'hash'=>$hash
+        ])->firstOrFail();
+
+        return view('front.page',compact(['page']));
     }
 
     /**

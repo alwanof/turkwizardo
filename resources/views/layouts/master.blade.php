@@ -17,6 +17,9 @@
 
 
   <style>
+      body{
+          background-image: url("{{asset('img/pattern1.png')}}");
+      }
     main{
       margin: 24px;
     }
@@ -35,7 +38,7 @@
 </head>
 <body  style="overflow-x: hidden;">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{url('/')}}">
         <img src="{{ asset('img/logoD.png') }}" width="48px" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,22 +49,8 @@
             <li class="nav-item {{ (strpos(Route::currentRouteName(), 'start') == 0) ? 'active' : '' }}">
                 <a class="nav-link" href="{{route('start')}}">{{__('fronthome.menu.home')}} </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">{{__('fronthome.menu.about')}}</a>
-            </li>
+            @include('includes.nav')
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{__('fronthome.menu.services.parent')}}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">{{__('fronthome.menu.services.free')}}</a>
-                    <a class="dropdown-item" href="#">{{__('fronthome.menu.services.paid')}}</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">{{__('fronthome.menu.contact')}}</a>
-            </li>
             <li class="nav-item">
                 <a href="#" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('fronthome.menu.add_your_factory')}}</a>
             </li>

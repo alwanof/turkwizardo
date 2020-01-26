@@ -23,6 +23,11 @@ Route::get('lang/set/{lang}', function ($lang) {
 Route::get('/', 'StartController@index')->name('start');
 
 Route::get('/results', 'StartController@search')->name('results');
+Route::resource('/pages', 'PageController');
+Route::get('/testo', function (){
+
+    return view('includes.nav',compact('pages'));
+});
 
 
 Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');

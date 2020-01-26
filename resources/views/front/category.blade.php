@@ -27,7 +27,6 @@
             <div class="mb-5">
 
                 <img src="{{$feed->cover}}" class="img-thumbnail" width="75px" alt="">
-                <a href="category/{{$feed->category->hash}}"><span class="badge badge-primary mx-1">{{$feed->category->name}}</span></a>
                 <a href="{{route('feeds.show',$feed->hash)}}"><h5 style="display:inline">{{$feed->name}}.</h5></a>
                 <span class="mx-4"><i class="fas fa-map-marker-alt text-primary"></i> <a href="#">{{$feed->city}}</a></span>
                 <p class="text-muted" title="{{$feed->tags}}">{{substr($feed->tags,0,50)}}</p>

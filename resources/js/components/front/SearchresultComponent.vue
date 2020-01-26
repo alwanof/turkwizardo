@@ -19,7 +19,7 @@
                 <div v-for="feed in feeds.data" :key="feed.id" class="mb-4">
                     <img :src="feed.cover" class="img-thumbnail" width="75px" alt="">
                     <a :href="'category/'+feed.category.hash"><span class="badge badge-primary mx-1">{{feed.category.name}}</span></a>
-                    <a href="#"><h5 style="display:inline">{{feed.name}}.</h5></a>
+                    <a :href="'factory/'+feed.hash"><h5 style="display:inline">{{feed.name}}.</h5></a>
                     <span class="mx-4"><i class="fas fa-map-marker-alt text-primary"></i> <a href="#">{{feed.city}}</a></span>
                     <p class="text-muted">{{feed.tags}}</p>
                 </div>

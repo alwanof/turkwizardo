@@ -17,6 +17,7 @@ window.Vue = require('vue');
  */
 import translations from '../lang/vue-translations.json'
 //php artisan lang:js resources/lang/vue-translations.json --json
+//git push origin HEAD:master
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('pagination', require('laravel-vue-pagination'));

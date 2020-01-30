@@ -10,7 +10,7 @@ return [
             'paid'=>'Paid Services'
         ],
         'contact'=>'Contact us',
-        'add_your_factory'=>'Add your Factory',
+        'add_your_factory'=>'Special for Factories',
         'search'=>'Search',
         'search_hint'=>'Search for anything..',
         'recommended'=>'Recommended',

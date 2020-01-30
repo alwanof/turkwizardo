@@ -2,7 +2,7 @@
 
 return [
     'menu'=>[
-        'home'=>'anasayfa',
+        'home'=>'Anasayfa',
         'about'=>'hakkımızda',
         'services'=>[
             'parent'=>'hizmetler',

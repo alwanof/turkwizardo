@@ -10,8 +10,10 @@
     </section>
 @stop
 @section('body')
-    <section class="row mb-3 bg-light">
-        {!! $page->content !!}
+    <section class="row  mb-3 bg-light">
+       {!! $page->content !!}
+
+
 
     </section>
 

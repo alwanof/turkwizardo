@@ -54,6 +54,30 @@
             <li class="nav-item">
                 <a href="#" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('fronthome.menu.add_your_factory')}}</a>
             </li>
+            <li class="nav-item">
+                <a href="https://www.facebook.com/turkwizard" class="nav-link" >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://twitter.com/WizardTurk" class="nav-link" >
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.instagram.com/turkwizard.com.tr/" class="nav-link" >
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" >
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+            </li>
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

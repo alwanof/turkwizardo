@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FrontformController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FrontformController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +206,14 @@
       <workItem from="1579507009090" duration="3010000" />
       <workItem from="1579697590723" duration="2408000" />
       <workItem from="1579701687772" duration="611000" />
-      <workItem from="1580031298063" duration="9956000" />
+      <workItem from="1580031298063" duration="13570000" />
+      <workItem from="1580123694803" duration="11000" />
+      <workItem from="1580311701544" duration="389000" />
+      <workItem from="1580314517506" duration="3062000" />
+      <workItem from="1580374478287" duration="127000" />
+      <workItem from="1580374912876" duration="344000" />
+      <workItem from="1580380882467" duration="6857000" />
+      <workItem from="1580417913648" duration="87000" />
     </task>
     <servers />
   </component>
@@ -228,10 +242,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2006" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578149040208" />
-    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580054976093">
+    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580388285547">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580054976093" />
+    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580388285547" />
     <state x="2056" y="238" key="FileChooserDialogImpl" timestamp="1579507485462">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -240,10 +254,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1980" y="218" width="675" height="665" key="StructurePopup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578997406403" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1580031300492">
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1580418078859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580031300492" />
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580418078859" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579697597311" />
     <state x="1880" y="199" width="875" height="663" key="recent.locations.popup" timestamp="1579354108948">
       <screen x="1366" y="0" width="1920" height="1080" />

@@ -12,6 +12,7 @@
 */
 
 //use Illuminate\Support\Facades\Route;
+
 use Illuminate\Support\Facades\App;
 
 Route::get('lang/set/{lang}', function ($lang) {
@@ -26,7 +27,7 @@ Route::get('/results', 'StartController@search')->name('results');
 Route::resource('/pages', 'PageController');
 Route::get('/testo', function (){
 
-    return view('includes.nav',compact('pages'));
+    return \Illuminate\Support\Facades\Request::url();;
 });
 
 

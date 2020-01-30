@@ -2,9 +2,9 @@
 
 return [
     'hint'=>[
-        'part1'=>'If you do not find factory ',
-        'search'=>'Click here',
-        'part2'=>' to go search page.',
+        'part1'=>'اذا لم تجد ما تبحث عنه    ',
+        'search'=>'انقر هنا',
+        'part2'=>' للذهاب لتسجيل الطلب او محرك البحث ',
     ],
 
 ];

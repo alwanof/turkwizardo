@@ -2,7 +2,7 @@
 
 return [
     'menu'=>[
-        'title'=>'Request VIP Service',
+        'title'=>'what do you need',
         'name'=>'Your Name',
         'email'=>'Your Email',
         'phone'=>'Your Phone No.',
@@ -11,8 +11,8 @@ return [
         'service'=>[
             'Send me factories list',
             'Send me prices list',
-            'Delivery and recommendation',
-            'Follow the deal',
+            'transportation to a factory',
+            'Follow the deal completely',
 
         ],
 

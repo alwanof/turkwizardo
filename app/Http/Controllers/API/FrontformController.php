@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Notifications\QueryAdminNoti;
 use App\Notifications\QueryNotiEn;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +15,9 @@ class FrontformController extends Controller
         $lang=session('lang');
 
         Notification::route('mail',$request->email)
-            ->notify((new QueryNotiEn($request->all()))->locale('ar'));
+            ->notify((new QueryNotiEn($request->all()))->locale($lang));
+        Notification::route('mail','support@turkwizard.com')
+            ->notify(new QueryAdminNoti($request->all()));
         return response('success',200);
     }
 }

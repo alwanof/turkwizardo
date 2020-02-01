@@ -66,6 +66,7 @@
                         "search/deep/feeds?page="
                         + page
                         +"&keywords="+this.keywords
+                        +"&category_id="+this.category_id
                     )
                     .then(res => {
                         this.feeds = res.data;

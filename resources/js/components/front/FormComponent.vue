@@ -9,6 +9,7 @@
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
+
                 <input type="text" v-model="feed.name" class="form-control" :placeholder="local[lang+'.frontform']['menu']['name']+'..'" required />
             </div>
             <div v-if="errors && errors.name" class="text-danger">{{ errors.name[0] }}</div>
@@ -59,14 +60,14 @@
             <div v-if="errors && errors.note" class="text-danger">{{ errors.note[0] }}</div>
 
             <div class="text-center my-3">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" :disabled="loading">
                     <i class="fas fa-cog fa-spin" v-show="loading"></i>
                     <i class="fas fa-cog" v-show="!loading"></i>
                     <span class="px-1">{{local[lang+'.frontform']['send_query']}}</span>
                 </button>
             </div>
             <div class="alert alert-success alert-dismissible fade show" v-show="success" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                {{local[lang+'.email']['welcome1']['line2']}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -90,7 +91,8 @@
                     email: null,
                     phone: null,
                     service: 0,
-                    note: null
+                    note: null,
+                    url:window.location.href
                 },
                 errors: []
             };

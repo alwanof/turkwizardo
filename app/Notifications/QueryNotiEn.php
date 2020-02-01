@@ -42,10 +42,16 @@ class QueryNotiEn extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Hello '.$this->feed['name'])
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject(__('email.welcome1.title'))
+            ->greeting(__('email.welcome1.dear').$this->feed['name'])
+                    ->line(__('email.welcome1.line1'))
+                    ->line(__('email.welcome1.line2'))
+                    ->line(__('email.welcome1.line3'))
+                    ->line(__('email.welcome1.line4'))
+                    ->line(__('email.welcome1.line5'))
+                    ->line(__('email.welcome1.thanks'))
+                    ->line(__('email.welcome1.regards'))
+                    ->line(__('email.welcome1.company'));
     }
 
     /**

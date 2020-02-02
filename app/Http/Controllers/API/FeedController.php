@@ -23,24 +23,26 @@ class FeedController extends Controller
 
     public function search(Request $request, $lang = 'en')
     {
-        $feeds = Feed::where('lang', $lang)->Where('name', 'LIKE', '%' . $request->keywords . '%')
-            ->orWhere('email', 'LIKE', '%' . $request->keywords . '%')
+        $keywords=trim($request->keywords);
+        $feeds = Feed::where('lang', $lang)->Where('name', 'LIKE', '%' . $keywords . '%')
+            ->orWhere('email', 'LIKE', '%' . $keywords . '%')
             ->with('category')
-            ->paginate(10);
+            ->paginate(100);
 
         return $feeds;
     }
 
     public function deepSearch(Request $request)
     {
-        $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
-            ->orWhere('description', 'LIKE', '%' . $request->keywords . '%')
-            ->orWhere('tags', 'LIKE', '%' . $request->keywords . '%')
+        $keywords=trim($request->keywords);
+        $feeds = Feed::Where('name', 'LIKE', '%' . $keywords . '%')
+            //->orWhere('description', 'LIKE', '%' . $request->keywords . '%')
+            ->orWhere('tags', 'LIKE', '%' . $keywords . '%')
             ->with('category')
             ->orderBy('rate','DESC')
             ->orderBy('recommended','DESC')
             ->orderBy('views','DESC')
-            ->paginate(10);
+            ->paginate(100);
 
         return $feeds;
     }

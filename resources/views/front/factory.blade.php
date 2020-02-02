@@ -4,10 +4,13 @@
     <section class="row cover align-items-center">
 
         <div class="col-12 text-center">
-           <h1 style="text-align: center !important;">{{$feed->name}}</h1>
-            <p class="lead px-5">
+            <div style="background-color:rgba(102, 29, 68, 0.7);color:#fff;display: inline-block">
+           <h1 style="text-align: center !important;display: inline-block">{{$feed->name}}</h1>
+                <br>
+            <p class="lead px-5" style="display: inline-block">
                 {!! substr($feed->description,0,200)  !!} ...
             </p>
+            </div>
 
         </div>
 
@@ -67,7 +70,10 @@
                     $tags=explode(',',$feed->tags);
                     @endphp
                     @foreach($tags as $tag)
-                        <span class="badge badge-warning">{{$tag}}</span>
+                        <a href="{{url('/results?keywords='.$tag)}}">
+                            <span class="badge badge-warning">{{$tag}}</span>
+                        </a>
+
                     @endforeach
                 </p>
             </div>

@@ -341,7 +341,7 @@
 							<div class="form-group">
 								<label>
 									Recommended:
-									<input type="checkbox"  name="reco" {{($feed->reco==1)?'checked':''}} data-toggle="toggle"  data-size="small" data-onstyle="success">
+									<input type="checkbox"  name="reco" {{($feed->reco==1)?'checked':''}} value="1" data-toggle="toggle"  data-size="small" data-onstyle="success">
 								</label>
 							</div>
 						</div>

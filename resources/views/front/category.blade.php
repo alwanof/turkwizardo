@@ -3,11 +3,15 @@
 @section('cover')
     <section class="row cover align-items-center">
 
-        <div class="col-12 text-center">
-            <h1 style="text-align: center !important;">{{$category->name}}</h1>
-            <p class="lead px-5">
-                {!! substr($category->description,0,200)  !!} ...
-            </p>
+        <div class="col-12 text-center" >
+            <div style="background-color:rgba(102, 29, 68, 0.7);color:#fff;display: inline-block">
+                <h1 style="text-align: center !important;display: inline-block">{{$category->name}}</h1>
+                <br>
+                <p class="lead px-5" style="display: inline-block">
+                    {!! substr($category->description,0,200)  !!} ...
+                </p>
+            </div>
+
 
         </div>
 

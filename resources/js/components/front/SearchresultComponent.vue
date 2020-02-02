@@ -8,7 +8,7 @@
                     <i class="fas fa-cog text-primary " v-show="!loading"></i>
                 </div>
             </div>
-            <input type="text" class="form-control" v-model="keywords"  placeholder="Type words to search..">
+            <input type="text" class="form-control" v-model="keywords"  :placeholder="local[lang+'.fronthome']['menu']['search_hint']">
 
         </div>
         <hr>

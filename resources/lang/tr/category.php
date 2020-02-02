@@ -2,9 +2,9 @@
 
 return [
     'hint'=>[
-        'part1'=>'Eğer bir fabrikaya ya da ürün bulamazsınız ',
+        'part1'=>'Eğer aradığınız bir ürünü ya da fabrikayı bulamadıysanız yeniden arama yapmak için lütfen ',
         'search'=>'tıklayınız',
-        'part2'=>' Anasayfa geçmek form doldurmak.',
+        'part2'=>' veya yandaki formu doldurarak bizimle iletişime geçiniz.',
     ],
 
 ];

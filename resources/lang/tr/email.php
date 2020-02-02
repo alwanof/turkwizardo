@@ -2,16 +2,16 @@
 
 return [
     'welcome1'=>[
-        'title'=>'We appreciate your interest in our services.',
-        'dear'=>'Dear ',
-        'line1'=>'We appreciate your interest in our services.',
-        'line2'=>'Your request will be passed to one of our expert advisors who will be in contact you as soon as possible.',
-        'line3'=>'Please visit our website www.turkwizard.com for detailed information.',
-        'line4'=>'In the meanwhile, please do contact us (Whatsapp:+905538000036), if you need more clarifications.',
-        'line5'=>'We look forward to doing business with you.',
-        'thanks'=>'Thanks.',
-        'regards'=>'Best regards,',
-        'company'=>'Customer Relations, Turkwizard Co',
+        'title'=>'Sizinle çalışmak için sabırsızlanıyoruz.',
+        'dear'=>'Sayın  ',
+        'line1'=>'Hizmetlerimize gösterdiğiniz ilgi için teşekkür ederiz..',
+        'line2'=>'Talebiniz uzman danışmanlarımızdan birine iletilecek ve en kısa sürede size dönüş yapılacaktır.',
+        'line3'=>'Ayrıntılı bilgi için lütfen www.turkwizard.com web sitemizi ziyaret ediniz.',
+        'line4'=>'Bu arada, daha fazla açıklamaya ihtiyacınız varsa lütfen bizimle iletişime geçin (Whatsapp: 905538000036).',
+        'line5'=>'Sizinle çalışmak için sabırsızlanıyoruz.',
+        'thanks'=>'Teşekkürler.',
+        'regards'=>'saygılarımızla,',
+        'company'=>'Müşteri ilişkileri, turkwizard Ltd. şirketi,',
     ],
 
 ];

@@ -4,12 +4,20 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="title" content="@yield('title')">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
   @if (session('lang')=='ar')
     <link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
+
+
+        <meta name="keywords" content="@yield('keywords','دليل المصانع ,مصانع ,مصانع تركية ,منتجات تركية ,صناعات تركية ,صناعات ,استيراد ,تصدير ,تجارة ,منتجات ,تركيا ,وسيط تجاري ,وسطاء تجارة ,مواد غذائية تركية ,مواد غذائية ,مواد خام تركية ,حديد ,صلب ,الاستيرد ,التصدير ,مواد بناء ,خدمات لوجستية ,زيارات المصانع ,الأغذية ,ملابس ,نسيج ,ملابس تركية ,نسيج تركي ,إنشاءات ,معادن ,حديد تركي ,صلب تركي ,مواد كيميائية ,بلاستيك ,مواد بلاستيكية ,آلات تركية ,الات ,ماكينات تركية ,مكائن تركية ,الكترونيات ,الكترونيات تركية ,اثاث تركي ,اثاث ,ديكورات ,قطع غيار ,أنظمة تبريد ,انظمة تدفئة ,انظمة تهوية ,الومونيوم ,زجاج ,خشب ,اسطنبول ,تجار ,صفقات ,مواد تركية ,مواد طبية ,ادوات طبية ,ماكينات طبية ,دليل للمصانع ,دليل للمنتجات ,غذاء ,ادوية ,مستوردين ,مستورد ,فولاذ ,سيراميك ,خلاطات ,مواد  صحية ,مطابخ ,حمامات')">
+        <meta name="description" content="@yield('desc','بناء علاقات تجارية تفاعلية بين الفرقاء المهتمين بالتجارة كالصناعيين والمنتجين والتجار والمزارعين والزبائن والمستوردين والمستهلكين من خلال موقع ألكتروني وقواعد بيانات تفاعلية')">
+      @else
+        <meta name="description" content="@yield('desc','It is focused, particularly on trade activities and has operations world-wide. Its interactive Portal and database use state-of-the-art technology, with the aim of building an interactive relationship with all stakeholders such as the Manufacturers, Producers, Traders, Farmers, Customers and Consumers')">
   @endif
 
 
@@ -72,7 +80,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link" >
+                <a href="https://www.youtube.com/channel/UCGD7_-E0B9HSz8tTTKiyb2Q" class="nav-link" >
                     <i class="fab fa-youtube"></i>
 
                 </a>

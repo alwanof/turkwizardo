@@ -10,11 +10,12 @@ return [
             'paid'=>'Ücretli hizmetler'
         ],
         'contact'=>'İletişim',
-        'add_your_factory'=>'Fabrikalara özel',
+        'add_your_factory'=>'Fabrikalara Özel',
         'search'=>'ARA',
         'search_hint'=>'istediğin şeyi ara',
         'recommended'=>'Önerilen',
         'most_popular'=>' En çok ziyaret',
+        'categories'=>'Kategoriler '
 
 
 

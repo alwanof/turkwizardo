@@ -2,7 +2,7 @@
 
 return [
     'menu'=>[
-        'title'=>'what do you need',
+        'title'=>'What Do You Need?',
         'name'=>'Your Name',
         'email'=>'Your Email',
         'phone'=>'Your Phone No.',
@@ -11,7 +11,7 @@ return [
         'service'=>[
             'Send me factories list',
             'Send me prices list',
-            'transportation to a factory',
+            'Transportation to a factory',
             'Follow the deal completely',
 
         ],

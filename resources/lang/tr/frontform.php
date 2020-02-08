@@ -3,20 +3,20 @@
 return [
     'menu'=>[
         'title'=>'nasıl yardımcı olabiliriz',
-        'name'=>'adınız',
-        'email'=>'e-posta',
-        'phone'=>'telefon numaranız',
-        'note'=>'notlarınız',
-        'service_title'=>'servisi seçiniz',
+        'name'=>'Adınız',
+        'email'=>'E-posta',
+        'phone'=>'Telefon Numaranız',
+        'note'=>'Notlarınız',
+        'service_title'=>'Servisi Seçiniz',
         'service'=>[
             'Fabrikalar listesi',
-            'fiyat teklifleri',
-            'fabrikalara ulaşım',
-            'siparişiniz takip etmek ve tamamlamak',
+            'Fiyat teklifleri',
+            'Fabrikalara ulaşım',
+            'Direkt Olarak Siparişe Ulaşım',
 
         ],
 
     ],
-    'send_query'=>'Sorgu Gönder'
+    'send_query'=>'İstek Gönder'
 
 ];

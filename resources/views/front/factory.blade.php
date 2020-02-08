@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('title',$feed->name)
+@section('keywords',$feed->tags)
+@section('desc',$feed->description)
 @section('cover')
     <section class="row cover align-items-center">
 

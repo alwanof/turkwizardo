@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/cover.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/cover.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/SearchresultComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/SearchresultComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/email.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/vue-translations.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vue-translations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/factory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/factory.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/frontform.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/frontform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/tr/frontform.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/frontform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +217,8 @@
       <workItem from="1580495056700" duration="4393000" />
       <workItem from="1580543114928" duration="4466000" />
       <workItem from="1580559482916" duration="3564000" />
-      <workItem from="1580630491373" duration="2775000" />
+      <workItem from="1580630491373" duration="3859000" />
+      <workItem from="1581148629368" duration="3202000" />
     </task>
     <servers />
   </component>

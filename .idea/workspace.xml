@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/frontform.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/frontform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/frontform.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/frontform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +214,9 @@
       <workItem from="1580543114928" duration="4466000" />
       <workItem from="1580559482916" duration="3564000" />
       <workItem from="1580630491373" duration="3859000" />
-      <workItem from="1581148629368" duration="3202000" />
+      <workItem from="1581148629368" duration="4172000" />
+      <workItem from="1581495462378" duration="10000" />
+      <workItem from="1581496573295" duration="672000" />
     </task>
     <servers />
   </component>
@@ -259,11 +257,11 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1980" y="218" width="675" height="665" key="StructurePopup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578997406403" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1580636257978">
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1581498999793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1580636257978" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580543176028" />
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1581498999793" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580560078124" />
     <state x="1880" y="199" width="875" height="663" key="recent.locations.popup" timestamp="1579354108948">
       <screen x="1366" y="0" width="1920" height="1080" />

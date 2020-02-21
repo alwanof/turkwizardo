@@ -16,6 +16,7 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 import translations from '../lang/vue-translations.json'
+//gd1dgfax6fcw
 //php artisan lang:js resources/lang/vue-translations.json --json
 //git push origin HEAD:master
 // const files = require.context('./', true, /\.vue$/i)

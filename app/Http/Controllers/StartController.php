@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Feed;
 use App\Section;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -19,6 +20,11 @@ class StartController extends Controller
         $categories = Category::where('lang', $lang)->get();
 
         return view('front.home', compact(['sections', 'recos', 'pops','categories']));
+    }
+
+    public function  seo(){
+        SEOMeta::setTitle('foo moo');
+        return view('seo');
     }
 
     public function search(Request $request){

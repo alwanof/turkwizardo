@@ -1,5 +1,24 @@
 @extends('layouts.master')
-@section('title',$category->name)
+@section('seo')
+    <title>{{__('seo.title')}} | {{$category->name}}</title>
+    <meta name="title" content="{{__('seo.title')}} | {{$category->name}}">
+    <meta name="description" content="{{substr($category->description,0,150)}}">
+    <meta name="keywords" content="{{__('seo.keywords')}}">
+
+    <meta name="og:title" property="og:title" content="{{__('seo.title')}} | {{$category->name}}">
+    <meta property=”og:url” content=”{{Request::url()}}” />
+    <meta property=”og:description” content=”{{substr($category->description,0,150)}}” />
+    <meta property=”og:image” content=”{{$category->cover}}”/>
+    <meta property=”og:type” content=”website” />
+    <meta property="og:site_name" content="{{__('seo.title')}} | {{$category->name}}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{substr($category->description,0,150)}}">
+    <meta name="twitter:title" content="{{__('seo.title')}} | {{$category->name}}">
+    <meta name="twitter:image:src" content="{{$category->cover}}">
+    <meta itemprop="name" content="{{__('seo.title')}} | {{$category->name}}">
+    <meta itemprop="description" content="{{substr($category->description,0,150)}}">
+
+@endsection
 @section('cover')
     <section class="row cover align-items-center">
 
@@ -8,7 +27,7 @@
                 <h1 style="text-align: center !important;display: inline-block">{{$category->name}}</h1>
                 <br>
                 <p class="lead px-5" style="display: inline-block">
-                    {!! substr($category->description,0,200)  !!} ...
+                    {!! \Illuminate\Support\Str::words($category->description,20) !!}
                 </p>
             </div>
 

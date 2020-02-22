@@ -22,10 +22,7 @@ class StartController extends Controller
         return view('front.home', compact(['sections', 'recos', 'pops','categories']));
     }
 
-    public function  seo(){
-        SEOMeta::setTitle('foo moo');
-        return view('seo');
-    }
+
 
     public function search(Request $request){
         $keywords=isset($request->keywords)?$request->keywords:'';

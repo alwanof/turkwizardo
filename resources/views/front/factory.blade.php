@@ -1,7 +1,25 @@
 @extends('layouts.master')
-@section('title',$feed->name)
-@section('keywords',$feed->tags)
-@section('desc',$feed->description)
+
+@section('seo')
+    <title>{{__('seo.title')}} | {{$feed->name}}</title>
+    <meta name="title" content="{{__('seo.title')}} | {{$feed->name}}">
+    <meta name="description" content="{{substr($feed->description,0,150)}}">
+    <meta name="keywords" content="{{\Illuminate\Support\Str::words($feed->tags,15)}}">
+
+    <meta name="og:title" property="og:title" content="{{__('seo.title')}} | {{$feed->name}}">
+    <meta property=”og:url” content=”{{Request::url()}}” />
+    <meta property=”og:description” content=”{{substr($feed->description,0,150)}}” />
+    <meta property=”og:image” content=”{{$feed->cover}}”/>
+    <meta property=”og:type” content=”website” />
+    <meta property="og:site_name" content="{{__('seo.title')}} | {{$feed->name}}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{substr($feed->description,0,150)}}">
+    <meta name="twitter:title" content="{{__('seo.title')}} | {{$feed->name}}">
+    <meta name="twitter:image:src" content="{{$feed->cover}}">
+    <meta itemprop="name" content="{{__('seo.title')}} | {{$feed->name}}">
+    <meta itemprop="description" content="{{substr($feed->description,0,150)}}">
+
+@endsection
 @section('cover')
     <section class="row cover align-items-center">
 
@@ -10,7 +28,7 @@
            <h1 style="text-align: center !important;display: inline-block">{{$feed->name}}</h1>
                 <br>
             <p class="lead px-5" style="display: inline-block">
-                {!! substr($feed->description,0,200)  !!} ...
+                {!! \Illuminate\Support\Str::words($feed->description,20) !!}
             </p>
             </div>
 

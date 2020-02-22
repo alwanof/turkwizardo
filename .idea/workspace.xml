@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/seo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/seo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/tr/seo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/turkwizard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/turkwizard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/seotools.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/factory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/factory.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/searchresult.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/searchresult.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seo.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +134,7 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/mariuzzo/laravel-js-localization" />
       <path value="$PROJECT_DIR$/vendor/tedivm/jshrink" />
-      <path value="$PROJECT_DIR$/vendor/artesaos/seotools" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RmTx1cbBWWtUd1xVUxeWvY1uYe" />
@@ -139,12 +155,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\tr" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\ar" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
     </key>
   </component>
   <component name="RunManager">
@@ -220,7 +236,8 @@
       <workItem from="1581495462378" duration="10000" />
       <workItem from="1581496573295" duration="672000" />
       <workItem from="1581508301286" duration="733000" />
-      <workItem from="1582270850128" duration="4732000" />
+      <workItem from="1582270850128" duration="5028000" />
+      <workItem from="1582355069697" duration="8741000" />
     </task>
     <servers />
   </component>
@@ -261,11 +278,11 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1980" y="218" width="675" height="665" key="StructurePopup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578997406403" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1581498999793">
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1582355168390">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1580636257978" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1581498999793" />
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582355168390" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580560078124" />
     <state x="1880" y="199" width="875" height="663" key="recent.locations.popup" timestamp="1579354108948">
       <screen x="1366" y="0" width="1920" height="1080" />

@@ -1,5 +1,24 @@
 @extends('layouts.master')
-@section('title','Home')
+@section('seo')
+  <title>{{__('seo.title')}}</title>
+  <meta name="title" content="{{__('seo.title')}}">
+  <meta name="description" content="{{__('seo.description')}}">
+  <meta name="keywords" content="{{__('seo.keywords')}}">
+
+  <meta name="og:title" property="og:title" content="{{__('seo.title')}}">
+  <meta property=”og:url” content=”{{Request::url()}}” />
+  <meta property=”og:description” content=”{{__('seo.description')}}” />
+  <meta property=”og:image” content=”{{asset('img/profile.jpg')}}”/>
+  <meta property=”og:type” content=”website” />
+  <meta property="og:site_name" content="{{__('seo.title')}}" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="{{__('seo.description')}}">
+  <meta name="twitter:title" content="{{__('seo.title')}}">
+  <meta name="twitter:image:src" content="{{asset('img/profile.jpg')}}">
+  <meta itemprop="name" content="{{__('seo.title')}}">
+  <meta itemprop="description" content="{{__('seo.description')}}">
+
+@endsection
 @section('cover')
     <section class="row cover align-items-center">
 

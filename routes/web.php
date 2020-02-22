@@ -22,7 +22,7 @@ Route::get('lang/set/{lang}', function ($lang) {
 })->name('lang');
 
 Route::get('/', 'StartController@index')->name('start');
-Route::get('/seo', 'StartController@seo');
+
 
 Route::get('/results', 'StartController@search')->name('results');
 Route::resource('/pages', 'PageController');

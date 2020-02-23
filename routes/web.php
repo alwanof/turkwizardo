@@ -48,5 +48,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/category/edit/{category}', 'CategoryController@edit')->name('categories.edit');
     Route::post('/feed/store', 'FeedController@store')->name('feeds.store');
     Route::post('/category/store', 'CategoryController@store')->name('categories.store');
+    Route::get('/leads', 'LeadController@index')->name('leads');
 
 });

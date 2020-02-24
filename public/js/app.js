@@ -35357,7 +35357,7 @@ Vue.component('lead-component', __webpack_require__(/*! ./components/LeadCompone
 var CONFIG = {
   //API_URL: 'http://localhost/turkwizard/public/api/',
   //PATH: '/turkwizard/public',
-  API_URL: 'http://turkwizard.com/public/api/',
+  API_URL: 'http://www.turkwizard.com/public/api/',
   PATH: '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };

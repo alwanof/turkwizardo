@@ -35355,9 +35355,9 @@ Vue.component('searchresult-component', __webpack_require__(/*! ./components/fro
 Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
 Vue.component('lead-component', __webpack_require__(/*! ./components/LeadComponent */ "./resources/js/components/LeadComponent.vue")["default"]);
 var CONFIG = {
-  //API_URL: 'http://localhost/turkwizard/public/api/',
+  // API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
   //PATH: '/turkwizard/public',
-  API_URL: 'http://www.turkwizard.com/public/api/',
+  API_URL: 'http://' + window.location.hostname + '/public/api/',
   PATH: '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };

@@ -26,9 +26,9 @@
             <div style="background-color:rgba(102, 29, 68, 0.7);color:#fff;display: inline-block">
                 <h1 style="text-align: center !important;display: inline-block">{{$category->name}}</h1>
                 <br>
-                <p class="lead px-5" style="display: inline-block">
+                <h2 class="lead px-5" style="display: inline-block;font-size:1.5rem !important">
                     {!! \Illuminate\Support\Str::words($category->description,20) !!}
-                </p>
+                </h2>
             </div>
 
 
@@ -49,7 +49,7 @@
             <div class="col-lg-6">
             <div class="mb-5">
 
-                <img src="{{$feed->cover}}" class="img-thumbnail" width="75px" alt="">
+                <img src="{{$feed->cover}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" width="75px" alt="">
                 <a href="{{route('feeds.show',$feed->hash)}}"><h5 style="display:inline">{{$feed->name}}.</h5></a>
                 <span class="mx-4"><i class="fas fa-map-marker-alt text-primary"></i> <a href="#">{{$feed->city}}</a></span>
                 <p class="text-muted" title="{{$feed->tags}}">{{substr($feed->tags,0,50)}}</p>

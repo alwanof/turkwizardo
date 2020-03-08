@@ -23141,7 +23141,13 @@ var render = function() {
           return _c("div", { key: feed.id, staticClass: "mb-4" }, [
             _c("img", {
               staticClass: "img-thumbnail",
-              attrs: { src: feed.cover, width: "75px", alt: "" }
+              attrs: {
+                src: feed.cover,
+                alt: feed.name,
+                title: feed.name,
+                width: "75px",
+                alt: ""
+              }
             }),
             _vm._v(" "),
             _c("a", { attrs: { href: "category/" + feed.category.hash } }, [
@@ -35355,8 +35361,8 @@ Vue.component('searchresult-component', __webpack_require__(/*! ./components/fro
 Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
 Vue.component('lead-component', __webpack_require__(/*! ./components/LeadComponent */ "./resources/js/components/LeadComponent.vue")["default"]);
 var CONFIG = {
-  // API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
-  //PATH: '/turkwizard/public',
+  //API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
+  //PATH: '/turkwizard/public',/
   API_URL: 'http://' + window.location.hostname + '/public/api/',
   PATH: '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__

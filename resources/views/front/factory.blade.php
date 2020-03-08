@@ -27,9 +27,9 @@
             <div style="background-color:rgba(102, 29, 68, 0.7);color:#fff;display: inline-block">
            <h1 style="text-align: center !important;display: inline-block">{{$feed->name}}</h1>
                 <br>
-            <p class="lead px-5" style="display: inline-block">
+            <h2 class="lead px-5" style="display: inline-block;font-size:1.5rem !important">
                 {!! \Illuminate\Support\Str::words($feed->description,20) !!}
-            </p>
+            </h2>
             </div>
 
         </div>
@@ -41,7 +41,7 @@
             <div class="col">
                         <div class="row">
                             <div class="col-lg-4 text-center">
-                                <img src="{{$feed->cover}}" class="img-thumbnail" alt="">
+                                <img src="{{$feed->cover}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-lg-8">
                                 <ul class="list-group">
@@ -107,7 +107,7 @@
             @for($i=1;$i<7;$i++)
                 @if(isset($feed->pics[$i]))
             <div class="col-lg-4 mb-2">
-                <img src="{{$feed->pics[$i]}}" class="img-thumbnail" alt="">
+                <img src="{{$feed->pics[$i]}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" alt="">
             </div>
                 @endif
             @endfor

@@ -23,7 +23,7 @@
     <section class="row cover align-items-center">
 
         <div class="col-12   text-center">
-            <img src="{{ asset('img/logo.png') }}" alt="turkwizard.com" height="100px"><br>
+            <img src="{{ asset('img/logo.png') }}" alt="{{__('seo.title')}}" title="{{__('seo.title')}}" height="100px"><br>
             <form class="form-inline my-3 justify-content-center" method="GET" action="{{ route('results') }}">
                 <input type="text" name="keywords" class="form-control-lg"  placeholder="{{__('fronthome.menu.search_hint')}}">
 
@@ -42,7 +42,7 @@
       <div class="card border-primary">
         <div class="card-header bg-primary text-white">{{ $section->title }}</div>
         <div class="card-body">
-            <p class="lead text-center">{{ $section->description }}</p>
+            <h2 class="lead text-center" style="font-size:1.5rem !important">{{ $section->description }}</h2>
           {!! $section->content !!}
         </div>
       </div>
@@ -60,7 +60,7 @@
 
           <div class="card shadow-sm p-0  bg-white">
               <a href="{{route('category.show',$category->hash)}}" title="{{$category->name}}">
-                  <img src="{{ $category->cover}}" title="{{$category->name}}" class="card-img-top" alt="...">
+                  <img src="{{ $category->cover}}" alt="{{$category->name}}" title="{{$category->name}}" class="card-img-top" alt="...">
               </a>
               <div class="card-body text-center">
                   <a href="{{route('category.show',$category->hash)}}" title="{{$category->name}}"><h5 class="card-title text-primary">{{ $category->name }} </h5></a>
@@ -83,7 +83,7 @@
 
               <div class="card  shadow-sm p-0  bg-white">
                   <a href="{{route('feeds.show',$reco->hash)}}" title="{{$reco->tags}}">
-                      <img src="{{ asset('storage/uploads/feeds/cover').'/'.$reco->hash.'.jpg' }}" title="{{$reco->tags}}" class="card-img-top" alt="...">
+                      <img src="{{ asset('storage/uploads/feeds/cover').'/'.$reco->hash.'.jpg' }}" title="{{$reco->tags}}" alt="{{$reco->name}}" class="card-img-top" alt="...">
                   </a>
                   <div class="card-body text-center">
                       <a href="{{route('feeds.show',$reco->hash)}}" title="{{$reco->tags}}"><h5 class="card-title text-primary">{{ $reco->name }} </h5></a>
@@ -109,7 +109,7 @@
 
               <div class="card  shadow-sm p-0  bg-white">
                   <a href="{{route('feeds.show',$pop->hash)}}" title="{{$pop->tags}}">
-                      <img src="{{ asset('storage/uploads/feeds/cover').'/'.$pop->hash.'.jpg' }}" class="card-img-top" alt="...">
+                      <img src="{{ asset('storage/uploads/feeds/cover').'/'.$pop->hash.'.jpg' }}" alt="{{ $pop->name }}" title="{{ $pop->tags }}" class="card-img-top" alt="...">
                   </a>
                   <div class="card-body text-center">
                       <a href="{{route('feeds.show',$pop->hash)}}"><h5 class="card-title text-primary">{{ $pop->name }}</h5></a>

@@ -23,7 +23,7 @@
     <section class="row cover align-items-center">
 
         <div class="col-12   text-center">
-            <img src="{{ asset('img/logo.png') }}" alt="turkwizard.com" height="100px"><br>
+            <img src="{{ asset('img/logo.png') }}" alt="{{__('seo.title')}}" title="{{__('seo.title')}}" alt="turkwizard.com" height="100px"><br>
 
 
         </div>

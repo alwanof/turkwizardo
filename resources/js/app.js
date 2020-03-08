@@ -33,8 +33,8 @@ Vue.component('lead-component', require('./components/LeadComponent').default);
 
 
 const CONFIG = {
-   // API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
-    //PATH: '/turkwizard/public',
+    //API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
+    //PATH: '/turkwizard/public',/
     API_URL: 'http://'+window.location.hostname+'/public/api/',
     PATH: '/public',
     LANG:translations

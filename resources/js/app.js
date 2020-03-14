@@ -29,13 +29,15 @@ Vue.component('form-component', require('./components/front/FormComponent.vue').
 Vue.component('searchresult-component', require('./components/front/SearchresultComponent.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('lead-component', require('./components/LeadComponent').default);
-
-
+let http='https://';
+if(location.protocol !== 'https:'){
+    http='http://';
+}
 
 const CONFIG = {
-    //API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
-    //PATH: '/turkwizard/public',/
-    API_URL: 'http://'+window.location.hostname+'/public/api/',
+    //API_URL: http+window.location.hostname+'/turkwizard/public/api/',
+    //PATH: '/turkwizard/public',
+    API_URL: http+window.location.hostname+'/public/api/',
     PATH: '/public',
     LANG:translations
 }

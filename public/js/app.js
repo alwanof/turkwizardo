@@ -35360,10 +35360,16 @@ Vue.component('form-component', __webpack_require__(/*! ./components/front/FormC
 Vue.component('searchresult-component', __webpack_require__(/*! ./components/front/SearchresultComponent.vue */ "./resources/js/components/front/SearchresultComponent.vue")["default"]);
 Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
 Vue.component('lead-component', __webpack_require__(/*! ./components/LeadComponent */ "./resources/js/components/LeadComponent.vue")["default"]);
+var http = 'https://';
+
+if (location.protocol !== 'https:') {
+  http = 'http://';
+}
+
 var CONFIG = {
-  //API_URL: 'http://'+window.location.hostname+'/turkwizard/public/api/',
-  //PATH: '/turkwizard/public',/
-  API_URL: 'http://' + window.location.hostname + '/public/api/',
+  //API_URL: http+window.location.hostname+'/turkwizard/public/api/',
+  //PATH: '/turkwizard/public',
+  API_URL: http + window.location.hostname + '/public/api/',
   PATH: '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };

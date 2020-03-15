@@ -35370,7 +35370,7 @@ console.log(http);
 var CONFIG = {
   //API_URL: http+window.location.hostname+'/turkwizard/public/api/',
   //PATH: '/turkwizard/public',
-  API_URL: 'http://www.turkwizard.com/public/api/',
+  API_URL: http + window.location.hostname + '/public/api/',
   PATH: '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };

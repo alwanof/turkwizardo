@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/countries.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/alert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/demand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/demand.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/primary.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,20 +142,20 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../m/unito" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../m/player" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\turkwizard\resources\views\leads" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\tr" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\ar" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,6 +240,16 @@
       <workItem from="1583663179020" duration="4443000" />
       <workItem from="1583762667248" duration="1553000" />
       <workItem from="1584201517245" duration="2177000" />
+      <workItem from="1584250377696" duration="885000" />
+      <workItem from="1584686732215" duration="673000" />
+      <workItem from="1584867080746" duration="607000" />
+      <workItem from="1585223148934" duration="7661000" />
+      <workItem from="1585243509442" duration="815000" />
+      <workItem from="1585245632612" duration="6651000" />
+      <workItem from="1585326846329" duration="597000" />
+      <workItem from="1585419252381" duration="6876000" />
+      <workItem from="1585494989137" duration="6637000" />
+      <workItem from="1585641325956" duration="20158000" />
     </task>
     <servers />
   </component>
@@ -248,21 +270,28 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580497363256">
+    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585232330876">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1580497363256" />
-    <state x="2006" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578149040208">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585232330876" />
+    <state x="2006" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585494761429">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state x="2006" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585494761429" />
     <state x="2006" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578149040208" />
-    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582392800824">
+    <state x="2024" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585230669818">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582392800824" />
-    <state x="2056" y="238" key="FileChooserDialogImpl" timestamp="1582473242106">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="2024" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585230669818" />
+    <state x="1993" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585692745313">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state x="1993" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585692745313" />
+    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585247409056" />
+    <state x="2056" y="229" key="FileChooserDialogImpl" timestamp="1585508106358">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2056" y="229" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585508106358" />
     <state x="2056" y="238" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582473242106" />
     <state x="1679" y="123" width="1307" height="719" key="SettingsEditor" timestamp="1583763771488">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -276,12 +305,13 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1458" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582375422999" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1583762688633">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog" timestamp="1585494990758">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1583762688633" />
+    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585494990758" />
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1585245714722" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582619814401" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580560078124" />
+    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584867980620" />
     <state width="750" height="540" key="javadoc.popup" timestamp="1582386145178">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -290,9 +320,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1880" y="199" width="875" height="663" key="recent.locations.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1579354108948" />
-    <state x="1905" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1579359432957">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup" timestamp="1585419459699">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="1905" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1579359432957" />
+    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585419459699" />
+    <state x="1905" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585229463223" />
   </component>
 </project>

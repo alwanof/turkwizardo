@@ -18,25 +18,25 @@
 
     @yield('seo')
     <link rel="shortcut icon" href="{{asset('img/fav.png')}}" />
-  <!-- CSRF Token -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-  @if (session('lang')=='ar')
-    <link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
-  @endif
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+    @if (session('lang')=='ar')
+        <link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
+    @endif
 
-  <style>
-      body{
-          background-image: url("{{asset('img/pattern1.png')}}");
-      }
-    main{
-      margin: 24px;
-    }
-    .footer {
-      background-color: #f5f5f5;
-    }
-  </style>
+    <style>
+        body{
+            background-image: url("{{asset('img/pattern1.png')}}");
+        }
+        main{
+            margin: 24px;
+        }
+        .footer {
+            background-color: #f5f5f5;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <!-- Flag-icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.css" />
@@ -44,7 +44,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-  @yield('css')
+    @yield('css')
 </head>
 <body  style="overflow-x: hidden;">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -62,7 +62,7 @@
             @include('includes.nav')
 
             <li class="nav-item">
-                <a href="{{route('requests.index')}}" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('demand.add_free_request')}}</a>
+                <a href="#" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('fronthome.menu.add_your_factory')}}</a>
             </li>
             <li class="nav-item">
                 <a href="https://www.facebook.com/turkwizard" target="_blank" class="nav-link" >
@@ -98,22 +98,22 @@
         </ul>
     </div>
 </nav>
-    @yield('cover')
+@yield('cover')
 <main class="container" id="app"  style="margin-top: -64px;">
-  <div class="row" >
-    <div class="col-lg-9">
+    <div class="row" >
+        <div class="col-lg-9">
 
-      @yield('body')
+            @yield('body')
+        </div>
+        <aside class="col-lg-3 bg-light py-4">
+            @yield('side')
+        </aside>
     </div>
-    <aside class="col-lg-3 bg-light py-4">
-       @include('sidebars.default')
-    </aside>
-  </div>
 </main>
 <footer class="footer mt-auto py-3">
-  <div class="container">
-    <span class="text-muted">© {{date('Y')}} Turkwizard All Rights Reserved.</span>
-  </div>
+    <div class="container">
+        <span class="text-muted">© {{date('Y')}} Turkwizard All Rights Reserved.</span>
+    </div>
 </footer>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" ></script>

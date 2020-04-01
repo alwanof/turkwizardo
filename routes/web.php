@@ -23,13 +23,9 @@ Route::get('lang/set/{lang}', function ($lang) {
 
 Route::get('/', 'StartController@index')->name('start');
 
-
 Route::get('/results', 'StartController@search')->name('results');
 Route::resource('/pages', 'PageController');
-Route::get('/testo', function (){
-
-    return \Illuminate\Support\Facades\Request::url();;
-});
+Route::resource('/requests', 'DemandController');
 
 
 Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');

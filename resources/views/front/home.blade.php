@@ -38,7 +38,7 @@
 
   @foreach ($sections as $section )
 <section class="row mb-5">
-    <div class="col">
+
       <div class="card border-primary">
         <div class="card-header bg-primary text-white">{{ $section->title }}</div>
         <div class="card-body">
@@ -46,9 +46,50 @@
           {!! $section->content !!}
         </div>
       </div>
-    </div>
+
   </section>
   @endforeach
+  @if($demands->count()>0)
+  <section class="row mb-5">
+      <div class="card border-warning">
+          <div class="card-header bg-warning text-white">
+              {{ __('demand.title')}}
+              <a class="btn btn-sm btn-primary float-right" href="#" role="button">Show All</a>
+          </div>
+          <div class="card-body">
+              <ul class="list-group list-group-flush">
+                  @foreach($demands as $demand)
+                      <li class="list-group-item">
+                          <h4>
+                              {{$demand->title}}
+
+                          </h4>
+
+                          <p>
+                              <span class="excerpt">{{substr($demand->desc,0,255)}}<a href="#"  class="exp">{{__('demand.more')}}</a></span>
+                              <span class="content" style="display: none">{{$demand->desc}}<a href="#" class="exp">{{__('demand.less')}}</a></span>
+
+                          </p>
+                          <p>
+                              <span class="badge badge-pill badge-secondary"><i class="fa fa-user"></i> {{$demand->name}}</span>
+                              <span class="badge badge-pill badge-secondary"> <i class="fas fa-at"></i> {{$demand->email}} </span>
+                              @if($demand->showPhone)
+                                  <span class="badge badge-pill badge-secondary"> <i class="fas fa-phone-volume"></i> {{$demand->phone}} </span>
+                              @endif
+                              <span class="badge badge-pill badge-secondary"><i class="far fa-clock"></i> {{$demand->created_at->diffForHumans()}}</span>
+
+                              <span class="badge badge-pill badge-secondary"> <i class="fas fa-map-marker-alt"></i> {{$demand->port}}</span>
+                              <i class="flag-icon flag-icon-{{Config::get("countries.".$demand->country)}}"></i> {{$demand->country}}
+                          </p>
+                      </li>
+                  @endforeach
+
+              </ul>
+
+          </div>
+      </div>
+  </section>
+  @endif
   <section class="row mb-5">
       <div class=" col-12 text-center text-primary  h3 p-2">
           <i class="fa fa-star"></i>
@@ -135,5 +176,22 @@
             height: 450px;
         }
     </style>
+    @stop
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $(".content").hide();
+            $(".exp").on("click", function (e) {
+                e.preventDefault();
+
+                $(this).parent().toggle();
+                $(this).parent().next().toggle();
+                $(this).parent().prev().toggle();
+
+
+            });
+        });
+    </script>
     @stop
 

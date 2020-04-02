@@ -49,6 +49,7 @@
 
   </section>
   @endforeach
+
   @if($demands->count()>0)
   <section class="row mb-5">
       <div class="card border-warning">
@@ -90,6 +91,7 @@
       </div>
   </section>
   @endif
+
   <section class="row mb-5">
       <div class=" col-12 text-center text-primary  h3 p-2">
           <i class="fa fa-star"></i>

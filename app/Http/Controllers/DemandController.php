@@ -64,20 +64,39 @@ class DemandController extends Controller
             'name' => 'required|max:190',
             'email' => 'required|email',
             'phone' => 'required|min:6|max:15',
-
-
         ]);
+        if(isset($request->eid)){
+            $demand=Demand::find($request->eid);
+            $demand->title=$request->title;
+            $demand->desc=$request->desc;
+            $demand->country=$request->country;
+            $demand->name=$request->name;
+            $demand->email=$request->email;
+            $demand->phone=$request->phone;
+            $demand->port=$request->port;
+            $demand->category_id=$request->ecategory;
+            $demand->save();
+            $msg= __('alert.success_demand_published');
 
-        $demand=new Demand;
-        $demand->title=$request->title;
-        $demand->desc=$request->desc;
-        $demand->country=$request->country;
-        $demand->name=$request->name;
-        $demand->email=$request->email;
-        $demand->phone=$request->phone;
-        $demand->save();
+        }else{
+            $demand=new Demand;
+            $demand->title=$request->title;
+            $demand->desc=$request->desc;
+            $demand->country=$request->country;
+            $demand->name=$request->name;
+            $demand->email=$request->email;
+            $demand->phone=$request->phone;
+            $demand->port=$request->port;
+            $demand->showPhone=(isset($request->showphone)?0:1);
+            $demand->save();
+            $msg= __('alert.success_demand_added');
+
+        }
+
+
+
         return redirect(route('requests.index'))->with([
-            'alert' => __('alert.success_demand_added')
+            'alert' => $msg
         ]);
     }
 

@@ -8,9 +8,15 @@ use Illuminate\Support\Facades\Storage;
 class Category extends Model
 {
     protected $appends = ['cover'];
-    function feeds(){
+    public function feeds(){
         return $this->hasMany(\App\Feed::class);
     }
+
+    public function demands(){
+        return $this->hasMany(Demand::class);
+    }
+
+
 
     public function getCoverAttribute()
     {

@@ -10,7 +10,7 @@ return [
             'paid'=>'الخدمات المدفوعة'
         ],
         'contact'=>'تواصل معنا',
-        'add_your_factory'=>'من اجل مصانعنا',
+        'add_your_factory'=>'أضف طلبك مجانا',
         'search'=>'البحث',
         'search_hint'=>' ابحث عن مصنع او منتج..',
         'recommended'=>'الموصى بها',

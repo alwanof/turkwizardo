@@ -58,7 +58,7 @@
                         @foreach($categories as $category)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="{{route('requests.index').'?cat='.$category->id}}">{{$category->name}}</a>
-                            <span class="badge badge-primary badge-pill">{{$category->feeds->count()}}</span>
+                            <span class="badge badge-primary badge-pill">{{$category->demands->count()}}</span>
                         </li>
                         @endforeach
                     </ul>
@@ -69,6 +69,7 @@
 
         </div>
         <div class="col-lg-8">
+            @auth()
             <div class="card border-primary ">
                 <div class="card-body p-0">
                     <ul class="list-group list-group-flush">
@@ -101,6 +102,7 @@
                     </ul>
                 </div>
             </div>
+            @endauth
 
             <ul class="list-group list-group-flush">
                 @foreach($demands as $demand)
@@ -186,7 +188,7 @@
                     </div>
                     <div class="form-group">
                         <label for="port">{{__('demand.shipping_port')}}</label>
-                        <input type="text" id="port" class="form-control" placeholder="{{__('demand.shipping_port_hint')}}" name="port" aria-describedby="port" required>
+                        <input type="text" id="port" class="form-control" placeholder="{{__('demand.shipping_port_hint')}}" name="port" aria-describedby="port" >
                     </div>
                     <div class="form-group">
                         <label for="desc">{{__('demand.country')}}</label>
@@ -271,7 +273,7 @@
                     <div class="modal-body">
 
                         @csrf
-
+                        <input type="hidden" name="eid" id="eid" value="0">
                         <div class="form-group">
                             <label for="esubject">{{__('demand.subject')}}</label>
                             <input type="text" id="esubject" class="form-control" placeholder="{{__('demand.subject_hint')}}" name="title" aria-describedby="Subject" required>
@@ -283,7 +285,7 @@
                         </div>
                         <div class="form-group">
                             <label for="eport">{{__('demand.shipping_port')}}</label>
-                            <input type="text" id="eport" class="form-control" placeholder="{{__('demand.shipping_port_hint')}}" name="port" aria-describedby="port" required>
+                            <input type="text" id="eport" class="form-control" placeholder="{{__('demand.shipping_port_hint')}}" name="port" aria-describedby="port">
                         </div>
                         <div class="form-group">
                             <label for="ecountry">{{__('demand.country')}}</label>
@@ -306,17 +308,19 @@
                             <label for="ephone">{{__('demand.phone')}}</label>
                             <input type="text" id="ephone" class="form-control" placeholder="{{__('demand.phone_hint')}}" name="phone" aria-describedby="Phone Number" required>
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" name="showphone" class="form-check-input" id="eshowphone">
-                            <label class="form-check-label" for="eshowphone">{{__('demand.dsmpn')}}</label>
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" name="agreement" class="form-check-input" id="agreement" required>
-                            <label class="form-check-label" for="agreement">{{__('demand.iagree')}} <a href="#" data-toggle="modal" data-target="#exampleModal">{{__('demand.terms_of_service.title')}}</a></label>
+                        <div class="form-group">
+                            <label for="ecategory">{{__('demand.categories')}}</label>
+                            <select name="ecategory" id="ecategory"  class="form-control" required>
+
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
 
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('demand.close')}}</button>
                         <button type="submit" class="btn btn-primary">{{__('demand.submit')}}</button>
@@ -349,12 +353,13 @@
 
                 $("#esubject").val(dataOb.title);
                 $("#edesc").val(dataOb.desc);
+                $("#eid").val(dataOb.id);
                 $("#eport").val(dataOb.port);
                 $("#ecountry").val(dataOb.country);
                 $("#ename").val(dataOb.name);
                 $("#eemail").val(dataOb.email);
                 $("#ephone").val(dataOb.phone);
-                $("#eshowphone").val(dataOb.showphone);
+                $("#ecategory").val(dataOb.category_id);
                 $("#editfeed").modal();
 
             });

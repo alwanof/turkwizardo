@@ -24,6 +24,7 @@ class CreateDemandsTable extends Migration
             $table->tinyInteger('showPhone')->default(0);
             $table->string('port')->nullable();
             $table->unsignedInteger('category_id')->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

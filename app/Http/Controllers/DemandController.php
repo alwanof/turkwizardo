@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class DemandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['only'=>['store','archive']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,14 +25,14 @@ class DemandController extends Controller
         $cat=(isset($_GET['cat']))?$_GET['cat']:'0';
         $coun=(isset($_GET['coun']))?$_GET['coun']:'0';
         if($cat!='0'){
-            $demands=Demand::where('category_id',$cat)->latest()->paginate(25);
+            $demands=Demand::where('category_id',$cat)->where('status',1)->latest()->paginate(25);
         }elseif($coun!='0'){
-            $demands=Demand::where('category_id','!=',0)->where('country',$coun)->latest()->paginate(25);
+            $demands=Demand::where('category_id','!=',0)->where('status',1)->where('country',$coun)->latest()->paginate(25);
 
         }else{
-            $demands=Demand::where('category_id','!=',0)->latest()->paginate(25);
+            $demands=Demand::where('category_id','!=',0)->where('status',1)->latest()->paginate(25);
         }
-        $newdemands=Demand::where('category_id',0)->latest()->get();
+        $newdemands=Demand::where('category_id',0)->where('status',1)->latest()->get();
         $lang = session('lang');
         $categories=Category::where('lang', $lang)->get();
 
@@ -140,8 +145,12 @@ class DemandController extends Controller
      * @param  \App\Demand  $demand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Demand $demand)
+    public function archive(Demand $demand)
     {
-        //
+        $demand->status=0;
+        $demand->save();
+        return redirect(route('requests.index'))->with([
+            'alert' => __('alert.success_demand_archived')
+        ]);
     }
 }

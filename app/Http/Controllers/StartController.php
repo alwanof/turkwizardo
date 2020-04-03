@@ -19,7 +19,7 @@ class StartController extends Controller
         $recos = Feed::where('lang', $lang)->orderBy('recommended', 'desc')->take(8)->get();
         $pops = Feed::where('lang', $lang)->orderBy('views', 'desc')->take(6)->get();
         $categories = Category::where('lang', $lang)->get();
-        $demands=Demand::where('category_id','!=',0)->latest()->take(3)->get();
+        $demands=Demand::where('category_id','!=',0)->where('status',1)->latest()->take(3)->get();
 
         return view('front.home', compact(['sections', 'recos', 'pops','categories','demands']));
     }

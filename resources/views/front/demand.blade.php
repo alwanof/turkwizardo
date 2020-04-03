@@ -77,7 +77,8 @@
                             <li class="list-group-item">
                                 <h4>
                                     {{$demand->title}}
-                                    <button type="button" class="btn btn-sm btn-warning edit" dataOb="{{$demand}}">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-warning  edit" dataOb="{{$demand}}"><i class="fa fa-edit"></i></button>
+                                    <a href="{{route('requests.archive',$demand)}}" class="btn btn-sm btn-danger" ><i class="fa fa-trash-alt"></i></a>
 
                                 </h4>
 
@@ -109,12 +110,16 @@
                 <li class="list-group-item">
                     <h4>
                         {{$demand->title}}
+                        @auth()
+                        <a href="{{route('requests.archive',$demand)}}" class="btn btn-sm btn-danger mx-1" ><i class="fa fa-trash-alt"></i></a>
+                            @endauth
 
                     </h4>
 
                     <p>
                         <span class="excerpt">{{substr($demand->desc,0,255)}}<a href="#"  class="exp">{{__('demand.more')}}</a></span>
                         <span class="content" style="display: none">{{$demand->desc}}<a href="#" class="exp">{{__('demand.less')}}</a></span>
+
 
                     </p>
                     <p>

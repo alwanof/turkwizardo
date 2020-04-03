@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/alert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/tr/alert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/tr/demand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DemandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DemandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_26_135412_create_demands_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_26_135412_create_demands_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/demand.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/demand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/alert.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/alert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/demand.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/demand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/demand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/demand.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,20 +141,20 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../m/player" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/tr" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\leads" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\tr" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\ar" />
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\leads" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
     </key>
   </component>
   <component name="RunManager">
@@ -244,7 +250,7 @@
       <workItem from="1585494989137" duration="6637000" />
       <workItem from="1585641325956" duration="22071000" />
       <workItem from="1585836698671" duration="4007000" />
-      <workItem from="1585898499256" duration="586000" />
+      <workItem from="1585898499256" duration="2560000" />
     </task>
     <servers />
   </component>
@@ -315,10 +321,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1880" y="199" width="875" height="663" key="recent.locations.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1579354108948" />
-    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup" timestamp="1585419459699">
+    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup" timestamp="1585905374299">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585419459699" />
+    <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585905374299" />
     <state x="1905" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585229463223" />
   </component>
 </project>

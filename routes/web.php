@@ -26,6 +26,7 @@ Route::get('/', 'StartController@index')->name('start');
 Route::get('/results', 'StartController@search')->name('results');
 Route::resource('/pages', 'PageController');
 Route::resource('/requests', 'DemandController');
+Route::get('/archive/{demand}', 'DemandController@archive')->name('requests.archive');
 
 
 Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');

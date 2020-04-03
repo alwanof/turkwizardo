@@ -9,6 +9,7 @@ return [
             'free'=>'Free Services',
             'paid'=>'Paid Services'
         ],
+        'show_all'=>'Show All',
         'contact'=>'Contact us',
         'add_your_factory'=>'Special For Factories',
         'search'=>'Search',

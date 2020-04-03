@@ -342,6 +342,10 @@
             background-attachment: fixed;
             height: 350px;
         }
+        .form-check-label {
+
+            margin:0 16px 0 16px;
+        }
     </style>
 @stop
 

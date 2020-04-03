@@ -55,7 +55,7 @@
       <div class="card border-warning">
           <div class="card-header bg-warning text-white">
               {{ __('demand.title')}}
-              <a class="btn btn-sm btn-primary float-right" href="#" role="button">Show All</a>
+              <a class="btn btn-sm btn-primary {{session('lang')=='ar'?'float-left':'float-right'}}" href="{{route('requests.index')}}" role="button">{{__('fronthome.menu.show_all')}}</a>
           </div>
           <div class="card-body">
               <ul class="list-group list-group-flush">

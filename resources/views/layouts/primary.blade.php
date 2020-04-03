@@ -62,7 +62,8 @@
             @include('includes.nav')
 
             <li class="nav-item">
-                <a href="#" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('fronthome.menu.add_your_factory')}}</a>
+                <a href="{{route('requests.index')}}" class="btn btn-sm btn-outline-warning navbar-btn m-2 " >{{__('demand.add_free_request')}}</a>
+
             </li>
             <li class="nav-item">
                 <a href="https://www.facebook.com/turkwizard" target="_blank" class="nav-link" >

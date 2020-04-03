@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DemandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DemandController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/alert.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/alert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/demand.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/demand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/demand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/demand.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
     </list>
@@ -245,7 +243,8 @@
       <workItem from="1585419252381" duration="6876000" />
       <workItem from="1585494989137" duration="6637000" />
       <workItem from="1585641325956" duration="22071000" />
-      <workItem from="1585836698671" duration="3342000" />
+      <workItem from="1585836698671" duration="4007000" />
+      <workItem from="1585898499256" duration="586000" />
     </task>
     <servers />
   </component>
@@ -301,10 +300,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1458" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582375422999" />
-    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog" timestamp="1585836711354">
+    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog" timestamp="1585898589681">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585836711354" />
+    <state x="2013" y="307" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585898589681" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1585245714722" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582619814401" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584867980620" />

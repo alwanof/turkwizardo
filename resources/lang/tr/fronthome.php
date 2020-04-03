@@ -9,6 +9,7 @@ return [
             'free'=>'Ücretsiz hizmet',
             'paid'=>'Ücretli hizmetler'
         ],
+        'show_all'=>'Show All',
         'contact'=>'İletişim',
         'add_your_factory'=>'Fabrikalara Özel',
         'search'=>'ARA',

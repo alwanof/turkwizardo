@@ -11,7 +11,7 @@ class DemandController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['only'=>['store','archive']]);
+        $this->middleware('auth',['only'=>['archive']]);
     }
 
     /**

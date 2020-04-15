@@ -35,7 +35,43 @@
     </section>
     @stop
 @section('body')
-
+    <section class="row bg-light p-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-comment-medical fa-3x text-primary"></i>
+                        <p>{{__('fronthome.menu.serviceA')}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a role="button" href="{{route('requests.index')}}" class="btn btn-primary">{{__('fronthome.menu.serviceBTN')}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="far fa-list-alt fa-3x text-primary"></i>
+                        <p>{{__('fronthome.menu.serviceB')}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">{{__('fronthome.menu.serviceBTN')}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-comment-dollar fa-3x text-primary"></i>
+                        <p>{{__('fronthome.menu.serviceC')}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a role="button" href="{{url('/pages/almedoan-129318')}}" class="btn btn-primary">{{__('fronthome.menu.serviceBTN')}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
   @foreach ($sections as $section )
 <section class="row mb-5">
 
@@ -166,6 +202,23 @@
       @endforeach
           </div>
   </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('fronthome.menu.serviceModalTitle')}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form-component :lang="{{ json_encode(app()->getLocale()) }}" />
+                </div>
+
+            </div>
+        </div>
+    </div>
   @stop
 
 @section('css')

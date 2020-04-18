@@ -2,17 +2,15 @@
 
 return [
     'menu'=>[
-        'title'=>'What Do You Need?',
+        'title'=>'How we can help',
         'name'=>'Your Name',
         'email'=>'Your Email',
         'phone'=>'Your Phone No.',
         'note'=>'Your Note',
         'service_title'=>'Select Service',
         'service'=>[
-            'Send me factories list',
-            'Send me prices list',
-            'Transportation to a factory',
-            'Follow the deal completely',
+            'Get a factories list for free',
+            'Follow the deal completely and get a prices list',
 
         ],
 

@@ -7,13 +7,13 @@ return [
         'services'=>[
             'parent'=>'خدماتنا',
             'free'=>'الخدمات المجانية',
-            'paid'=>'الخدمات المدفوعة'
+            'paid'=>'الخدمات المأجورة'
         ],
-        'serviceA'=>'Navigate to requests page to add your free request',
-        'serviceB'=>'Fill form so we can send you free factories list',
-        'serviceC'=>'Navigate to paid service page ',
-        'serviceBTN'=>'Select',
-        'serviceModalTitle'=>'Fill following form',
+        'serviceA'=>'إضافة طلب شراء مجاناَ',
+        'serviceB'=>'الحصول على قائمة مصانع مجاناَ',
+        'serviceC'=>'متابعة الصفقة بالكامل وجلب عروض أسعار  ',
+        'serviceBTN'=>'أطلب الخدمة ',
+        'serviceModalTitle'=>'أخبرنا بتفاصيل طلبك ',
         'show_all'=>'عرض الجميع',
         'contact'=>'تواصل معنا',
         'add_your_factory'=>'أضف طلبك مجانا',
@@ -21,7 +21,7 @@ return [
         'search_hint'=>' ابحث عن مصنع او منتج..',
         'recommended'=>'الموصى بها',
         'most_popular'=>'الاكثر زيارة',
-        'categories'=>'الأصناف'
+        'categories'=>'الأقسام'
 
 
 

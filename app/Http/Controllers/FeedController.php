@@ -103,6 +103,7 @@ class FeedController extends Controller
 
             $feed->name = $request->$name;
             $feed->hash = $request->hash;
+            $feed->slug = Str::slug($feed->name).'-'.$feed->id;
             $feed->description = $request->$desc;
             $feed->phone = $request->phone;
             $feed->email  = $request->email;

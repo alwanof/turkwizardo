@@ -161,11 +161,11 @@
       @foreach ($recos as $reco)
 
               <div class="card  shadow-sm p-0  bg-white">
-                  <a href="{{route('feeds.show',$reco->slug)}}" title="{{$reco->tags}}">
+                  <a href="{{route('feeds.show',$reco->hash)}}" title="{{$reco->tags}}">
                       <img src="{{ asset('storage/uploads/feeds/cover').'/'.$reco->hash.'.jpg' }}" title="{{$reco->tags}}" alt="{{$reco->name}}" class="card-img-top" alt="...">
                   </a>
                   <div class="card-body text-center">
-                      <a href="{{route('feeds.show',$reco->slug)}}" title="{{$reco->tags}}"><h5 class="card-title text-primary">{{ $reco->name }} </h5></a>
+                      <a href="{{route('feeds.show',$reco->hash)}}" title="{{$reco->tags}}"><h5 class="card-title text-primary">{{ $reco->name }} </h5></a>
                       <p class="text-center border-top">
                           <a href="{{route('category.show',$reco->category->hash)}}"><span class="text-warning">{{ $reco->category->name }}</span></a>
                       </p>
@@ -187,11 +187,11 @@
       @foreach ($pops as $pop)
 
               <div class="card  shadow-sm p-0  bg-white">
-                  <a href="{{route('feeds.show',$pop->slug)}}" title="{{$pop->tags}}">
+                  <a href="{{route('feeds.show',$pop->hash)}}" title="{{$pop->tags}}">
                       <img src="{{ asset('storage/uploads/feeds/cover').'/'.$pop->hash.'.jpg' }}" alt="{{ $pop->name }}" title="{{ $pop->tags }}" class="card-img-top" alt="...">
                   </a>
                   <div class="card-body text-center">
-                      <a href="{{route('feeds.show',$pop->slug)}}"><h5 class="card-title text-primary">{{ $pop->name }}</h5></a>
+                      <a href="{{route('feeds.show',$pop->hash)}}"><h5 class="card-title text-primary">{{ $pop->name }}</h5></a>
                       <p class="text-center border-top">
                           <a href="{{route('category.show',$pop->category->hash)}}"><span class="text-warning">{{ $pop->category->name }}</span></a>
                       </p>

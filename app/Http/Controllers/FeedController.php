@@ -139,10 +139,10 @@ class FeedController extends Controller
      */
     public function show($hash)
     {
-        $lang=App::getLocale();
+        //$lang=App::getLocale();
         $feed=Feed::where([
-            'lang'=>$lang,
-            'hash'=>$hash
+            //'lang'=>$lang,
+            'slug'=>$hash
             ])->firstOrFail();
         $feed->views=$feed->views+1;
         $feed->save();

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\App;
 Route::get('lang/set/{lang}', function ($lang) {
     App::setLocale($lang);
     session(['lang' => $lang]);
-    return back()->with('alert', __('alerts.LANGUAGE_CHANGED'));
+    return redirect('/')->with('alert', __('alerts.LANGUAGE_CHANGED'));
 })->name('lang');
 
 Route::get('/', 'StartController@index')->name('start');
@@ -48,3 +48,25 @@ Route::prefix('admin')->group(function () {
     Route::get('/leads', 'LeadController@index')->name('leads');
 
 });
+Route::get('/test', function () {
+    $feeds=\App\Feed::all();
+    foreach ($feeds as $feed){
+        if(!$feed->slug){
+            $feed->slug=\Illuminate\Support\Str::slug($feed->name).'-'.$feed->id;
+            $feed->save();
+        }
+    }
+    return 'done';
+});
+
+Route::get('/test2', function () {
+    $feeds=\App\Category::all();
+    foreach ($feeds as $feed){
+
+            $feed->hash=\Illuminate\Support\Str::slug($feed->name).'-'.$feed->id;
+            $feed->save();
+
+    }
+    return 'done';
+});
+

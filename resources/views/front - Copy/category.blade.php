@@ -50,7 +50,7 @@
             <div class="mb-5">
 
                 <img src="{{$feed->cover}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" width="75px" alt="">
-                <a href="{{route('feeds.show',$feed->slug)}}"><h5 style="display:inline">{{$feed->name}}.</h5></a>
+                <a href="{{route('feeds.show',$feed->hash)}}"><h5 style="display:inline">{{$feed->name}}.</h5></a>
                 <span class="mx-4"><i class="fas fa-map-marker-alt text-primary"></i> <a href="#">{{$feed->city}}</a></span>
                 <p class="text-muted" title="{{$feed->tags}}">{{substr($feed->tags,0,50)}}</p>
             </div>

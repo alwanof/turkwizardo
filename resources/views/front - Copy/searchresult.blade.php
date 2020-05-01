@@ -35,6 +35,8 @@
         <div class="col">
             <searchresult-component :keywords="{{json_encode($keywords)}}" :data="{{json_encode($feeds)}}" :lang="{{ json_encode(app()->getLocale()) }}"  />
 
+
+
         </div>
     </section>
 

@@ -48,25 +48,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/leads', 'LeadController@index')->name('leads');
 
 });
-Route::get('/test', function () {
-    $feeds=\App\Feed::all();
-    foreach ($feeds as $feed){
-        if(!$feed->slug){
-            $feed->slug=\Illuminate\Support\Str::slug($feed->name).'-'.$feed->id;
-            $feed->save();
-        }
-    }
-    return 'done';
-});
 
-Route::get('/test2', function () {
-    $feeds=\App\Category::all();
-    foreach ($feeds as $feed){
-
-            $feed->hash=\Illuminate\Support\Str::slug($feed->name).'-'.$feed->id;
-            $feed->save();
-
-    }
-    return 'done';
-});
 

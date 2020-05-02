@@ -61,6 +61,38 @@
 							</div>
 						</div>
 					</div>
+                    <div class="border border-primary my-2 p-2">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="flag-icon flag-icon-us"></i>
+									</span>
+                                </div>
+                                <input type="text" class="form-control" value="{{$feed->slug}}" name="enslug" placeholder="English slug Name.." required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="flag-icon flag-icon-sa"></i>
+									</span>
+                                </div>
+                                <input type="text" class="form-control" value="{{$arFeed->slug}}" name="arslug" placeholder="Arabic slug Name.." required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+									<span class="input-group-text" >
+										<i class="flag-icon flag-icon-tr"></i>
+									</span>
+                                </div>
+                                <input type="text" class="form-control" value="{{$trFeed->slug}}" name="trslug" placeholder="Turkish slug Name.." required>
+                            </div>
+                        </div>
+                    </div>
 
 					<div class="border border-primary my-2 p-2">
 						<div class="form-group">

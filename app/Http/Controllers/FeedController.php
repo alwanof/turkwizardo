@@ -59,11 +59,15 @@ class FeedController extends Controller
     public function store(Request $request)
     {
 
+
         $this->validate($request, [
             'enname' => 'required|max:190',
             'hash' => 'required',
             'arname' => 'required|max:190',
             'trname' => 'required|max:190',
+            'enslug' => 'required|max:190',
+            'arslug' => 'required|max:190',
+            'trslug' => 'required|max:190',
             'endesc' => 'required',
             'ardesc' => 'required',
             'trdesc' => 'required',
@@ -83,6 +87,7 @@ class FeedController extends Controller
 
         foreach ($langs as $lang) {
             $name = $lang . 'name';
+            $slug= $lang . 'slug';
             $desc = $lang . 'desc';
             $city = Config::get('cities.' . $lang)[$citykey];
             $tags = $lang . 'tags';
@@ -103,7 +108,7 @@ class FeedController extends Controller
 
             $feed->name = $request->$name;
             $feed->hash = $request->hash;
-            $feed->slug = Str::slug($feed->name).'-'.$feed->id;
+            $feed->slug = ($lang=='ar')?$this->slug($request->$slug):Str::slug($request->$slug);
             $feed->description = $request->$desc;
             $feed->phone = $request->phone;
             $feed->email  = $request->email;
@@ -205,4 +210,22 @@ class FeedController extends Controller
      */
     public function destroy(Feed $feed)
     { }
+
+    private function slug($string, $separator = '-') {
+        if (is_null($string)) {
+            return "";
+        }
+
+        $string = trim($string);
+
+        $string = mb_strtolower($string, "UTF-8");;
+
+        $string = preg_replace("/[^a-z0-9_\sءاأإآؤئبتثجحخدذرزسشصضطظعغفقكلمنهويةى]#u/", "", $string);
+
+        $string = preg_replace("/[\s-]+/", " ", $string);
+
+        $string = preg_replace("/[\s_]/", $separator, $string);
+
+        return $string;
+    }
 }

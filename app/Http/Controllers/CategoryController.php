@@ -136,6 +136,8 @@ class CategoryController extends Controller
             ])->first();
             $hash = $enCategory->hash;
 
+
+
             return view('categories.edit', compact(['enCategory', 'arCategory', 'trCategory', 'hash']));
         }
 

@@ -20,18 +20,20 @@ Route::get('lang/set/{lang}', function ($lang) {
     session(['lang' => $lang]);
     return redirect('/')->with('alert', __('alerts.LANGUAGE_CHANGED'));
 })->name('lang');
+Route::middleware('lang')->group(function () {
+    Route::get('/', 'StartController@index')->name('start');
 
-Route::get('/', 'StartController@index')->name('start');
-
-Route::get('/results', 'StartController@search')->name('results');
-Route::resource('/pages', 'PageController');
-Route::resource('/requests', 'DemandController');
-Route::get('/archive/{demand}', 'DemandController@archive')->name('requests.archive');
+    Route::get('/results', 'StartController@search')->name('results');
+    Route::resource('/pages', 'PageController');
+    Route::resource('/requests', 'DemandController');
+    Route::get('/archive/{demand}', 'DemandController@archive')->name('requests.archive');
 
 
-Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');
-Route::get('/category/{hash}', 'CategoryController@show')->name('category.show');
-Auth::routes();
+    Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');
+    Route::get('/category/{hash}', 'CategoryController@show')->name('category.show');
+    Auth::routes();
+});
+
 
 Route::prefix('admin')->group(function () {
 

@@ -19,7 +19,7 @@ class Localization
         if (session()->has('lang')) {
             App::setLocale(session()->get('lang'));
         }else{
-            $lang=preg_split('/,|;/', $request->server('HTTP_ACCEPT_LANGUAGE'));
+            $lang=preg_split('/,|;/', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
             App::setLocale($lang[1]);
             session(['lang' => $lang[1]]);
         }

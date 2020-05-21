@@ -2995,6 +2995,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchresultComponent.vue",
@@ -23134,6 +23139,30 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _c("section", { staticClass: "row mb-5" }, [
+      _c(
+        "div",
+        { staticClass: " col-12 text-danger  h5 my-3 p-2 text-center" },
+        [
+          _c("i", { staticClass: "fa fa-info-circle" }),
+          _vm._v(
+            "\n            " +
+              _vm._s(_vm.local[_vm.lang + ".category"]["hint"]["part1"])
+          ),
+          _c("a", { attrs: { href: "/" } }, [
+            _c("i", { staticClass: "fa fa-search" }),
+            _vm._v(
+              " " + _vm._s(_vm.local[_vm.lang + ".category"]["hint"]["search"])
+            )
+          ]),
+          _vm._v(
+            " " +
+              _vm._s(_vm.local[_vm.lang + ".category"]["hint"]["part2"]) +
+              "\n            "
+          ),
+          _c("hr")
+        ]
+      ),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col" },

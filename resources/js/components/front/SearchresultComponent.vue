@@ -13,6 +13,11 @@
         </div>
         <hr>
         <section class="row mb-5">
+            <div class=" col-12 text-danger  h5 my-3 p-2 text-center">
+                <i class="fa fa-info-circle"></i>
+                {{local[lang+'.category']['hint']['part1']}}<a href="/"><i class="fa fa-search"></i> {{local[lang+'.category']['hint']['search']}}</a> {{local[lang+'.category']['hint']['part2']}}
+                <hr>
+            </div>
             <div class="col">
 
 

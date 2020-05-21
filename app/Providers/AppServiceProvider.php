@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        $lang = App::getLocale();
+        /*$lang = App::getLocale();
         $value = (session('lang')) ? session('lang') : $lang;
-        session(['lang' => $value]);
+        session(['lang' => $value]);*/
 
         View::composer('includes.nav',function ($view) {
             $pages=\App\Page::where([

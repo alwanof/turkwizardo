@@ -22,8 +22,19 @@ class Localization
 
         }else{
             $lang=preg_split('/,|;/', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-            App::setLocale($lang[1]);
-            session(['lang' => $lang[1]]);
+
+            if(array_key_exists(1,$lang)){
+                //dd($lang[1]);
+                App::setLocale($lang[1]);
+                $browserLang=$lang[1];
+            }else{
+                //dd(explode('-',$lang[0])[0]);
+                App::setLocale(explode('-',$lang[0])[0]);
+                $browserLang=explode('-',$lang[0])[0];
+            }
+            session(['lang' => $browserLang]);
+
+
 
         }
 

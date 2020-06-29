@@ -3,8 +3,7 @@
     <title>{{__('seo.title')}} | {{__('demand.title')}}</title>
     <meta name="title" content="{{__('seo.title')}} | {{__('demand.title')}}">
     <meta name="description" content="{{__('seo.description')}}">
-    <meta name="keywords" content="{{__('seo.keywords')}}">
-
+    <meta name="keywords" content="{{__('seo.demand_keywords')}}">
     <meta name="og:title" property="og:title" content="{{__('seo.title')}} | {{__('demand.title')}}">
     <meta property=”og:url” content=”{{Request::url()}}” />
     <meta property=”og:description” content=”{{__('seo.description')}}” />
@@ -17,6 +16,8 @@
     <meta name="twitter:image:src" content="{{asset('img/profile.jpg')}}">
     <meta itemprop="name" content="{{__('seo.title')}} | {{__('demand.title')}}">
     <meta itemprop="description" content="{{__('seo.description')}}">
+
+
 
 @endsection
 @section('cover')
@@ -83,8 +84,8 @@
                                 </h4>
 
                                 <p>
-                                    <span class="excerpt">{{substr($demand->desc,0,255)}}<a href="#"  class="exp">{{__('demand.more')}}</a></span>
-                                    <span class="content" style="display: none">{{$demand->desc}}<a href="#" class="exp">{{__('demand.less')}}</a></span>
+                                    <span class="excerpt">{{substr($demand->desc,0,255)}}<a href="#" dataID="{{$demand->id}}" class="exp">{{__('demand.more')}}</a></span>
+                                    <span class="content" style="display: none">{{$demand->desc}}<a href="#" dataID="{{$demand->id}}" class="exp">{{__('demand.less')}}</a></span>
 
                                 </p>
                                 <p>
@@ -117,17 +118,23 @@
                     </h4>
 
                     <p>
-                        <span class="excerpt">{{substr($demand->desc,0,255)}}<a href="#"  class="exp">{{__('demand.more')}}</a></span>
-                        <span class="content" style="display: none">{{$demand->desc}}<a href="#" class="exp">{{__('demand.less')}}</a></span>
+                        <span  class="excerpt">{{substr($demand->desc,0,255)}}<a href="#" dataID="{{$demand->id}}" class="exp">{{__('demand.more')}}</a></span>
+                        <span class="content" style="display: none">{{$demand->desc}}<a href="#" dataID="{{$demand->id}}" class="exp">{{__('demand.less')}}</a></span>
 
 
                     </p>
                     <p>
                         <span class="badge badge-pill badge-secondary"><i class="fa fa-user"></i> {{$demand->name}}</span>
-                        <span class="badge badge-pill badge-secondary"> <i class="fas fa-at"></i> {{$demand->email}} </span>
+                        <span id="contact_details_{{$demand->id}}" style="display: none">
+
+                            <span class="badge badge-pill badge-secondary"> <i class="fas fa-at"></i> {{$demand->email}} </span>
                         @if($demand->showPhone)
-                        <span class="badge badge-pill badge-secondary"> <i class="fas fa-phone-volume"></i> {{$demand->phone}} </span>
-                        @endif
+                                <span class="badge badge-pill badge-secondary"> <i class="fas fa-phone-volume"></i> {{$demand->phone}} </span>
+                            @endif
+                        </span>
+
+
+
                         <span class="badge badge-pill badge-secondary"><i class="far fa-clock"></i> {{$demand->created_at->diffForHumans()}}</span>
 
                         <span class="badge badge-pill badge-secondary"> <i class="fas fa-map-marker-alt"></i> {{$demand->port}}</span>
@@ -376,6 +383,9 @@
             $(".content").hide();
             $(".exp").on("click", function (e) {
                 e.preventDefault();
+
+                $('#contact_details_'+$(this).attr('dataID')).toggle();
+
 
                 $(this).parent().toggle();
                 $(this).parent().next().toggle();

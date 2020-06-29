@@ -35,7 +35,20 @@
     </section>
     @stop
 @section('body')
-    <section class="row bg-light p-5">
+    @foreach ($sections as $section )
+        <section class="row mb-5">
+
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">{{ $section->title }}</div>
+                <div class="card-body">
+                    <h2 class="lead text-center" style="font-size:1.5rem !important">{{ $section->description }}</h2>
+                    {!! $section->content !!}
+                </div>
+            </div>
+
+        </section>
+    @endforeach
+    <section class="row pb-5">
         <div class="row">
             <div class="col-lg-4">
                 <div class="card text-center">
@@ -72,19 +85,7 @@
             </div>
         </div>
     </section>
-  @foreach ($sections as $section )
-<section class="row mb-5">
 
-      <div class="card border-primary">
-        <div class="card-header bg-primary text-white">{{ $section->title }}</div>
-        <div class="card-body">
-            <h2 class="lead text-center" style="font-size:1.5rem !important">{{ $section->description }}</h2>
-          {!! $section->content !!}
-        </div>
-      </div>
-
-  </section>
-  @endforeach
 
   @if($demands->count()>0)
   <section class="row mb-5">

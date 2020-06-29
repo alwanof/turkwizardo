@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Localization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Localization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/seo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/seo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/tr/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/seo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/demand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/demand.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +17,6 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="turkwizard" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,16 +133,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\tr" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\ar" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\views\leads" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
     </key>
   </component>
   <component name="RunManager">
@@ -246,7 +247,10 @@
       <workItem from="1589303344379" duration="2205000" />
       <workItem from="1589327157673" duration="251000" />
       <workItem from="1590099700087" duration="2669000" />
-      <workItem from="1590678783836" duration="1113000" />
+      <workItem from="1590678783836" duration="1799000" />
+      <workItem from="1590757266503" duration="16000" />
+      <workItem from="1593098723396" duration="257000" />
+      <workItem from="1593416327383" duration="3876000" />
     </task>
     <servers />
   </component>
@@ -287,12 +291,11 @@
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="2056" y="229" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1586014232075" />
-    <state x="2056" y="238" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582473242106" />
-    <state x="1679" y="118" width="1307" height="883" key="SettingsEditor" timestamp="1589303321778">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="1679" y="123" width="1307" height="883" key="SettingsEditor" timestamp="1593416506630">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1679" y="118" width="1307" height="883" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589303321778" />
-    <state x="1679" y="123" width="1307" height="719" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1583763771488" />
+    <state x="1679" y="123" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593416506630" />
     <state x="1980" y="210" width="675" height="641" key="StructurePopup" timestamp="1585922935765">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
@@ -301,21 +304,12 @@
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585922601719" />
-    <state x="1458" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1582375422999">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1458" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582375422999" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1589327337203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589327337203" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1585245714722" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582619814401" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584867980620" />
-    <state width="750" height="540" key="javadoc.popup" timestamp="1582386145178">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="750" height="540" key="javadoc.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1582386145178" />
     <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup" timestamp="1585922563933">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>

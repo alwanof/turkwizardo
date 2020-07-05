@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/seo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/seo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/seo.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/seo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/demand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/demand.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeedController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/SearchresultComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/SearchresultComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/searchresult.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/searchresult.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +252,14 @@
       <workItem from="1590678783836" duration="1799000" />
       <workItem from="1590757266503" duration="16000" />
       <workItem from="1593098723396" duration="257000" />
-      <workItem from="1593416327383" duration="3876000" />
+      <workItem from="1593416327383" duration="4625000" />
+      <workItem from="1593611407130" duration="12000" />
+      <workItem from="1593847340975" duration="657000" />
+      <workItem from="1593848874696" duration="528000" />
+      <workItem from="1593849943149" duration="27000" />
+      <workItem from="1593850759560" duration="5224000" />
+      <workItem from="1593934800564" duration="1527000" />
+      <workItem from="1593960141037" duration="6744000" />
     </task>
     <servers />
   </component>
@@ -270,23 +279,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585232330876">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2008" y="314" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585232330876" />
     <state x="2006" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589294715046">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="2006" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589294715046" />
-    <state x="2024" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585230669818">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2024" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585230669818" />
     <state x="1993" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585692745313">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="1993" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585692745313" />
-    <state x="1993" y="238" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585247409056" />
     <state x="2056" y="229" key="FileChooserDialogImpl" timestamp="1586014232075">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
@@ -308,12 +308,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589327337203" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1585245714722" />
-    <state x="460" y="215" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584867980620" />
+    <state x="1967" y="266" width="700" height="530" key="recent.locations.popup" timestamp="1593934829130">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1967" y="266" width="700" height="530" key="recent.locations.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593934829130" />
     <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup" timestamp="1585922563933">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="1905" y="43" width="840" height="996" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1585922563933" />
-    <state x="1905" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585229463223" />
   </component>
 </project>

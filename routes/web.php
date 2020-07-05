@@ -21,6 +21,8 @@ Route::get('lang/set/{lang}', function ($lang) {
     return redirect('/')->with('alert', __('alerts.LANGUAGE_CHANGED'));
 })->name('lang');
 
+
+
 Route::middleware('lang')->group(function () {
     Route::get('/', 'StartController@index')->name('start');
 

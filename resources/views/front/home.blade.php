@@ -22,12 +22,30 @@
 @section('cover')
     <section class="row cover align-items-center">
 
-        <div class="col-12   text-center">
+        <div class="col-lg-8 offset-lg-2 text-center">
             <img src="{{ asset('img/logo.png') }}" alt="{{__('seo.title')}}" title="{{__('seo.title')}}" height="100px"><br>
-            <form class="form-inline my-3 justify-content-center" method="GET" action="{{ route('results') }}">
-                <input type="text" name="keywords" class="form-control-lg"  placeholder="{{__('fronthome.menu.search_hint')}}">
+            <form class="my-3 justify-content-center" method="GET" action="{{ route('results') }}">
+                <div class="input-group justify-content-center">
+                    <input type="text" name="keywords" class="form-control-lg"  placeholder="{{__('fronthome.menu.search_hint')}}">
+                    <select name="category_id"  class="form-control-lg">
+                        <option value="0" selected>Category...</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}" title="{{$category->name}}">{{substr($category->name,0,15)}}</option>
+                        @endforeach
+                    </select>
+                    <select name="city"  class="form-control-lg">
+                        <option value="0" selected>City...</option>
+                        @foreach($cities as $city)
+                        <option value="{{$city->city}}">{{$city->city}}</option>
+                        @endforeach
 
-                <button type="submit" class="btn btn-lg btn-primary" >{{__('fronthome.menu.search')}}</button>
+                    </select>
+                    <div class="input-group-prepend">
+                        <button type="submit" class="btn btn-lg btn-primary" >{{__('fronthome.menu.search')}}</button>
+                    </div>
+                </div>
+
+
             </form>
 
         </div>

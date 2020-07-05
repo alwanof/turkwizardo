@@ -35,14 +35,57 @@ class FeedController extends Controller
     public function deepSearch(Request $request)
     {
         $keywords=trim($request->keywords);
-        $feeds = Feed::Where('name', 'LIKE', '%' . $keywords . '%')
-            //->orWhere('description', 'LIKE', '%' . $request->keywords . '%')
-            ->orWhere('tags', 'LIKE', '%' . $keywords . '%')
-            ->with('category')
-            ->orderBy('rate','DESC')
-            ->orderBy('recommended','DESC')
-            ->orderBy('views','DESC')
-            ->paginate(100);
+        if($request->category_id!=0 and $request->city!='0'){
+            $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
+                ->where('category_id',$request->category_id)
+                ->where('city',$request->city)
+                ->orWhere(function ($query)use ($request){
+                    $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
+                        ->where('city',$request->city)
+                        ->where('category_id',$request->category_id);
+                })
+                ->with('category')
+                ->orderBy('rate','DESC')
+                ->orderBy('recommended','DESC')
+                ->orderBy('views','DESC')
+                ->paginate(50);
+        }elseif ($request->category_id!=0){
+
+            $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
+                ->where('category_id',$request->category_id)
+                ->orWhere(function ($query)use ($request){
+                    $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
+                        ->where('category_id',$request->category_id);
+                })
+                ->with('category')
+                ->orderBy('rate','DESC')
+                ->orderBy('recommended','DESC')
+                ->orderBy('views','DESC')
+                ->paginate(50);
+
+        }elseif($request->city!='0'){
+
+            $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
+                ->where('city',$request->city)
+                ->orWhere(function ($query)use ($request){
+                    $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
+                        ->where('city',$request->city);
+                })
+                ->with('category')
+                ->orderBy('rate','DESC')
+                ->orderBy('recommended','DESC')
+                ->orderBy('views','DESC')
+                ->paginate(50);
+        }else{
+            $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
+                ->orWhere('tags', 'LIKE', '%' . $request->keywords . '%')
+                ->with('category')
+                ->orderBy('rate','DESC')
+                ->orderBy('recommended','DESC')
+                ->orderBy('views','DESC')
+                ->paginate(50);
+        }
+
 
         return $feeds;
     }

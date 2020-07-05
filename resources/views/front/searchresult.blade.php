@@ -33,7 +33,7 @@
 @section('body')
     <section class="row py-4 mb-5 bg-white">
         <div class="col">
-            <searchresult-component :keywords="{{json_encode($keywords)}}" :data="{{json_encode($feeds)}}" :lang="{{ json_encode(app()->getLocale()) }}"  />
+            <searchresult-component :keywords="{{json_encode($keywords)}}" :categories="{{json_encode($categories)}}" :cities="{{json_encode($cities)}}" :category_id="{{json_encode($category_id)}}" :city="{{json_encode($city)}}"  :lang="{{ json_encode(app()->getLocale()) }}"  />
 
         </div>
     </section>

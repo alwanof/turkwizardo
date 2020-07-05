@@ -3000,21 +3000,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchresultComponent.vue",
-  props: ["lang", "data", 'keywords'],
+  props: ["lang", 'keywords', 'category_id', 'city', 'categories', 'cities'],
   data: function data() {
     return {
       path: _app__WEBPACK_IMPORTED_MODULE_0__["default"].PATH,
       loading: false,
       local: _app__WEBPACK_IMPORTED_MODULE_0__["default"].LANG,
       errors: [],
-      feeds: []
+      feeds: [],
+      otherfeeds: [],
+      searchkey: {
+        city: '0',
+        category_id: 0
+      }
     };
   },
   created: function created() {
+    this.searchkey.city = this.city;
+    this.searchkey.category_id = this.category_id;
     this.getResults();
+    this.getOtherResults();
   },
   watch: {
     keywords: function keywords(after, before) {
@@ -3034,9 +3061,24 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
-      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "search/deep/feeds?page=" + page + "&keywords=" + this.keywords + "&category_id=" + this.category_id).then(function (res) {
+      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "search/deep/feeds?page=" + page + "&keywords=" + this.keywords + "&category_id=" + this.searchkey.category_id + "&city=" + this.searchkey.city).then(function (res) {
         _this.feeds = res.data;
         _this.loading = false;
+      });
+    },
+    getOtherResults: function getOtherResults() {
+      var _this2 = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.loading = true;
+
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+
+      axios.get(_app__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL + "search/deep/feeds?page=" + page + "&keywords=" + "&category_id=0" + "&city=0").then(function (res) {
+        _this2.otherfeeds = res.data;
+        _this2.loading = false;
       });
     }
   }
@@ -23133,7 +23175,95 @@ var render = function() {
             _vm.keywords = $event.target.value
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchkey.category_id,
+              expression: "searchkey.category_id"
+            }
+          ],
+          staticClass: "form-control",
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.$set(
+                _vm.searchkey,
+                "category_id",
+                $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+              )
+            }
+          }
+        },
+        [
+          _c("option", { attrs: { value: "0", selected: "" } }, [
+            _vm._v("Category...")
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.categories, function(category) {
+            return _c("option", { domProps: { value: category.id } }, [
+              _vm._v(_vm._s(category.name))
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchkey.city,
+              expression: "searchkey.city"
+            }
+          ],
+          staticClass: "form-control",
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.$set(
+                _vm.searchkey,
+                "city",
+                $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+              )
+            }
+          }
+        },
+        [
+          _c("option", { attrs: { value: "0", selected: "" } }, [
+            _vm._v("City...")
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.cities, function(cityitem) {
+            return _c("option", { domProps: { value: cityitem.city } }, [
+              _vm._v(_vm._s(cityitem.city))
+            ])
+          })
+        ],
+        2
+      )
     ]),
     _vm._v(" "),
     _c("hr"),
@@ -23165,8 +23295,50 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col" },
+        { staticClass: "col-12" },
         _vm._l(_vm.feeds.data, function(feed) {
+          return _c("div", { key: feed.id, staticClass: "mb-4" }, [
+            _c("img", {
+              staticClass: "img-thumbnail",
+              attrs: {
+                src: feed.cover,
+                alt: feed.name,
+                title: feed.name,
+                width: "75px",
+                alt: ""
+              }
+            }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "category/" + feed.category.hash } }, [
+              _c("span", { staticClass: "badge badge-primary mx-1" }, [
+                _vm._v(_vm._s(feed.category.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "factory/" + feed.slug } }, [
+              _c("h5", { staticStyle: { display: "inline" } }, [
+                _vm._v(_vm._s(feed.name) + ".")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "mx-4" }, [
+              _c("i", { staticClass: "fas fa-map-marker-alt text-primary" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(feed.city))])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-muted" }, [_vm._v(_vm._s(feed.tags))])
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 bg-light" },
+        _vm._l(_vm.otherfeeds.data, function(feed) {
           return _c("div", { key: feed.id, staticClass: "mb-4" }, [
             _c("img", {
               staticClass: "img-thumbnail",
@@ -23205,7 +23377,20 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c("hr"),
+      _vm._v(" "),
+      _c("h3", { staticClass: "text-danger" }, [
+        _vm._v("You may be also like :")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

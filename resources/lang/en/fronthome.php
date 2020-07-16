@@ -21,7 +21,9 @@ return [
         'search_hint'=>'Search for anything..',
         'recommended'=>'Recommended',
         'most_popular'=>'Most Popular',
-        'categories'=>'Categories'
+        'categories'=>'Categories',
+        'city'=>'City',
+        'category'=>'Category'
 
     ],
 

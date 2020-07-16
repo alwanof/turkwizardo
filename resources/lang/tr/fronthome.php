@@ -21,7 +21,9 @@ return [
         'search_hint'=>'istediğin şeyi ara',
         'recommended'=>'Önerilen',
         'most_popular'=>' En çok ziyaret',
-        'categories'=>'Kategoriler '
+        'categories'=>'Kategoriler ',
+        'city'=>'City',
+        'category'=>'Category'
 
 
 

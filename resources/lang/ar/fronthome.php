@@ -21,7 +21,9 @@ return [
         'search_hint'=>' ابحث عن مصنع او منتج..',
         'recommended'=>'الموصى بها',
         'most_popular'=>'الاكثر زيارة',
-        'categories'=>'الأقسام'
+        'categories'=>'الأقسام',
+        'city'=>'المدينة',
+        'category'=>'القسم'
 
 
 

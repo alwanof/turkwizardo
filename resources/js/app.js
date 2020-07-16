@@ -33,7 +33,7 @@ let http='https://';
 if(location.protocol !== 'https:'){
     http='http://';
 }
-console.log(http);
+
 
 const CONFIG = {
     //API_URL: http+window.location.hostname+'/turkwizard/public/api/',

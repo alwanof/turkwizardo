@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1df63e6-d2a9-4250-a5b7-adc1e4393fd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/tr/fronthome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/vue-translations.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vue-translations.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,16 +129,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\tr" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\lang\ar" />
       <recent name="C:\xampp\htdocs\turkwizard\resources\views\leads" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\turkwizard\resources\views\front" />
     </key>
   </component>
   <component name="RunManager">
@@ -259,7 +255,12 @@
       <workItem from="1593934800564" duration="1527000" />
       <workItem from="1593960141037" duration="6744000" />
       <workItem from="1594022014431" duration="2764000" />
-      <workItem from="1594903287475" duration="3375000" />
+      <workItem from="1594903287475" duration="4325000" />
+      <workItem from="1595141632113" duration="311000" />
+      <workItem from="1595342118496" duration="14000" />
+      <workItem from="1595349660472" duration="74000" />
+      <workItem from="1595410558969" duration="1514000" />
+      <workItem from="1595423278122" duration="5573000" />
     </task>
     <servers />
   </component>
@@ -283,11 +284,11 @@
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="2006" y="246" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589294715046" />
-    <state x="223" y="0" width="1141" height="728" key="SettingsEditor" timestamp="1594903326498">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1679" y="123" width="1141" height="728" key="SettingsEditor" timestamp="1594910686175">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1679" y="118" width="1307" height="883" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1589303321778" />
-    <state x="1679" y="123" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593416506630" />
+    <state x="1679" y="123" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594910686175" />
     <state x="223" y="0" width="1141" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594903326498" />
     <state x="460" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1589327337203">
       <screen x="0" y="0" width="1366" height="728" />

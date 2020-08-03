@@ -27,20 +27,21 @@ Vue.component('user-component', require('./components/UserComponent.vue').defaul
 Vue.component('feeden-component', require('./components/en/FeedenComponent.vue').default);
 Vue.component('form-component', require('./components/front/FormComponent.vue').default);
 Vue.component('searchresult-component', require('./components/front/SearchresultComponent.vue').default);
+Vue.component('search', require('./components/front/PowersearchComponent.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('lead-component', require('./components/LeadComponent').default);
-let http='https://';
-if(location.protocol !== 'https:'){
-    http='http://';
+let http = 'https://';
+if (location.protocol !== 'https:') {
+    http = 'http://';
 }
 
 
 const CONFIG = {
-    //API_URL: http+window.location.hostname+'/turkwizard/public/api/',
+    //API_URL: http + window.location.hostname + '/turkwizard/public/api/',
     //PATH: '/turkwizard/public',
-    API_URL: http+window.location.hostname+'/public/api/',
+    API_URL: http + window.location.hostname + '/public/api/',
     PATH: '/public',
-    LANG:translations
+    LANG: translations
 }
 
 export default CONFIG;

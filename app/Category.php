@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Storage;
 class Category extends Model
 {
     protected $appends = ['cover'];
-    public function feeds(){
+    public function feeds()
+    {
         return $this->hasMany(\App\Feed::class);
     }
 
-    public function demands(){
+    public function demands()
+    {
         return $this->hasMany(Demand::class);
     }
 
@@ -20,8 +22,8 @@ class Category extends Model
 
     public function getCoverAttribute()
     {
-        $path = Storage::exists('/public/uploads/categories/cover/' . $this->hash . '.jpg');
-        $cover = ($path) ? asset('storage/uploads/categories/cover/' . $this->hash . '.jpg') : asset('storage/uploads/categories/cover/0.jpg');
+        $path = Storage::exists('/public/uploads/categories/cover/' . $this->hash . '.png');
+        $cover = ($path) ? asset('storage/uploads/categories/cover/' . $this->hash . '.png') : asset('storage/uploads/categories/cover/0.png');
         return $cover;
     }
 }

@@ -1,132 +1,117 @@
-@extends('layouts.master')
-
+@extends('layouts.mobile')
 @section('seo')
-    <title>{{__('seo.title')}} | {{$feed->name}}</title>
-    <meta name="title" content="{{__('seo.title')}} | {{$feed->name}}">
-    <meta name="description" content="{{substr($feed->description,0,150)}}">
-    <meta name="keywords" content="{{\Illuminate\Support\Str::words($feed->tags,15)}}">
+    <title>{{ __('seo.title') }} | {{ $feed->name }}</title>
+    <meta name="title" content="{{ __('seo.title') }} | {{ $feed->name }}">
+    <meta name="description" content="{{ substr($feed->description, 0, 150) }}">
+    <meta name="keywords" content="{{ \Illuminate\Support\Str::words($feed->tags, 15) }}">
 
-    <meta name="og:title" property="og:title" content="{{__('seo.title')}} | {{$feed->name}}">
-    <meta property=”og:url” content=”{{Request::url()}}” />
-    <meta property=”og:description” content=”{{substr($feed->description,0,150)}}” />
-    <meta property=”og:image” content=”{{$feed->cover}}”/>
+    <meta name="og:title" property="og:title" content="{{ __('seo.title') }} | {{ $feed->name }}">
+    <meta property=”og:url” content=”{{ Request::url() }}” />
+    <meta property=”og:description” content=”{{ substr($feed->description, 0, 150) }}” />
+    <meta property=”og:image” content=”{{ $feed->cover }}” />
     <meta property=”og:type” content=”website” />
-    <meta property="og:site_name" content="{{__('seo.title')}} | {{$feed->name}}" />
+    <meta property="og:site_name" content="{{ __('seo.title') }} | {{ $feed->name }}" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="{{substr($feed->description,0,150)}}">
-    <meta name="twitter:title" content="{{__('seo.title')}} | {{$feed->name}}">
-    <meta name="twitter:image:src" content="{{$feed->cover}}">
-    <meta itemprop="name" content="{{__('seo.title')}} | {{$feed->name}}">
-    <meta itemprop="description" content="{{substr($feed->description,0,150)}}">
+    <meta name="twitter:description" content="{{ substr($feed->description, 0, 150) }}">
+    <meta name="twitter:title" content="{{ __('seo.title') }} | {{ $feed->name }}">
+    <meta name="twitter:image:src" content="{{ $feed->cover }}">
+    <meta itemprop="name" content="{{ __('seo.title') }} | {{ $feed->name }}">
+    <meta itemprop="description" content="{{ substr($feed->description, 0, 150) }}">
 
 @endsection
-@section('cover')
-    <section class="row cover align-items-center">
 
-        <div class="col-12 text-center">
-            <div style="background-color:rgba(102, 29, 68, 0.7);color:#fff;display: inline-block">
-           <h1 style="text-align: center !important;display: inline-block">{{$feed->name}}</h1>
-                <br>
-            <h2 class="lead px-5" style="display: inline-block;font-size:1.5rem !important">
-                {!! \Illuminate\Support\Str::words($feed->description,20) !!}
-            </h2>
-            </div>
+@section('content')
+
+    <div data-card-height="240" class="card card-style mb-4 preload-img" data-src="{{ asset('pwa/img/promo.jpg') }}"
+        style="height: 240px; background-image: url(&quot;{{ asset('pwa/img/promo.jpg') }}&quot;);">
+        <div class="card-center text-center p-2">
+            <img src="{{ $feed->cover }}" alt="{{ $feed->name }}" title="{{ $feed->name }}"
+                class="img-thumbnail rounded-circle" width="150">
+            <h1 class="color-white font-28">{{ $feed->name }}</h1>
+
 
         </div>
-
-    </section>
-@stop
-@section('body')
-        <section class="row mb-5">
-            <div class="col">
-                        <div class="row">
-                            <div class="col-lg-4 text-center">
-                                <img src="{{$feed->cover}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" alt="">
-                            </div>
-                            <div class="col-lg-8">
-                                <ul class="list-group">
-
-                                    <li class="list-group-item">
-                                        <strong>{{__('factory.menu.category')}}:</strong>
-                                        <blockquote>{{$feed->category->name}}</blockquote>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <strong>{{__('factory.menu.city')}}:</strong>
-                                        <blockquote>{{$feed->city}}</blockquote>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <strong>{{__('factory.menu.website')}}:</strong>
-                                        <blockquote><a href="{{$feed->website}}" target="_blank">{{$feed->website}}</a></blockquote>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-
+        <div class="card-overlay bg-black opacity-80"></div>
+    </div>
+    <div class="card card-overflow card-style">
+        <div class="content">
+            <div class="d-flex">
+                <div class="flex-grow-1">
+                    <h2 class="font-30">{{ __('factory.menu.description') }}</h2>
+                    <p class="mt-n1 font-12 color-highlight mb-4"><a href="{{ $feed->website }}"
+                            target="_blank">{{ $feed->website }}</a></p>
+                </div>
+                <div class="flex-shrink-1">
+                    <h3 class="font-20">{{ $feed->category->name }}</h3>
+                    <span
+                        class="bg-violet-dark float-right rounded-xs text-uppercase font-900 font-9 pr-2 pl-2 pb-0 pt-0 line-height-s mt-n1">
+                        {{ $feed->city }}
+                    </span>
+                </div>
             </div>
-        </section>
-        <section class="row mb-3">
-            <div class=" col-12 text-primary  h3 p-2">
-                <i class="fa fa-info-circle"></i>
-                {{__('factory.menu.description')}}
-            </div>
-            <div class="col-12 mb-3">
-                <p class="lead">
-                    {!! $feed->description !!}
-                </p>
+            <div class="divider"></div>
+            <p>
+                {!! $feed->description !!}
+            </p>
+
+            <div class="d-flex mt-4">
+                <div class="flex-grow-1">
+
+                    <p class="mt-n2">
+                        <strong class="color-theme">Share with the World</strong>
+                    </p>
+                </div>
+                <div class="flex-shrink-1 mt-1">
+
+                    <a href="#" data-menu="menu-share" class="icon icon-xs rounded-xl shadow-m ml-2 bg-red2-dark"><i
+                            class="fa fa-heart"></i></a>
+                </div>
             </div>
 
-        </section>
-        <section class="row mb-3">
-            <div class=" col-12 text-primary  h3 p-2">
-                <i class="fa fa-list-alt"></i>
-                {{__('factory.menu.products')}}
-            </div>
-            <div class="col-12 mb-3">
-                <p class="lead">
+            <div class="flex-grow-1">
+                <h2 class="font-30"> {{ __('factory.menu.products') }}</h2>
 
-                    @php
-                    $tags=explode(',',$feed->tags);
-                    @endphp
-                    @foreach($tags as $tag)
-                        <a href="{{url('/results?keywords='.$tag)}}">
-                            <span class="badge badge-warning">{{$tag}}</span>
+            </div>
+            <div class="divider mt-4"></div>
+            <p>
+                @php
+                $tags=explode(',',$feed->tags);
+                @endphp
+                @foreach ($tags as $tag)
+                    <a href="{{ url('/results?keywords=' . $tag) }}">
+                        <span class="badge badge-warning">{{ $tag }}</span>
+                    </a>
+
+                @endforeach
+            </p>
+
+            <div class="flex-grow-1">
+                <h2 class="font-30"> {{ __('factory.menu.gallery') }}</h2>
+
+            </div>
+            <div class="divider mt-4"></div>
+            <div class="row text-center row-cols-3 mb-0">
+                @for ($i = 1; $i < 7; $i++)
+                    @if (isset($feed->pics[$i]))
+                        <a class="col mb-4 default-link" data-lightbox="gallery-1" href="{{ $feed->pics[$i] }}"
+                            title="Vynil and Typerwritter">
+                            <img src="{{ $feed->pics[$i] }}" alt="{{ $feed->name }}" title="{{ $feed->name }}"
+                                data-src="{{ $feed->pics[$i] }}" class="img-fluid rounded-xs preload-img">
                         </a>
+                    @endif
+                @endfor
 
-                    @endforeach
-                </p>
             </div>
-
-        </section>
-        <section class="row mb-3">
-            <div class=" col-12 text-primary  h3 p-2">
-                <i class="fa fa-photo"></i>
-                {{__('factory.menu.gallery')}}
-            </div>
-            @for($i=1;$i<7;$i++)
-                @if(isset($feed->pics[$i]))
-            <div class="col-lg-4 mb-2">
-                <img src="{{$feed->pics[$i]}}" alt="{{$feed->name}}" title="{{$feed->name}}" class="img-thumbnail" alt="">
-            </div>
-                @endif
-            @endfor
-
-        </section>
-
-
+        </div>
+    </div>
 
 @stop
 
 @section('css')
-    <style>
-        .cover{
-            background-image:url("{{asset('img/cover.jpg')}}") ;
-            background-position:center ;
-            background-size:cover ;
-            background-attachment: fixed;
-            height: 350px;
-        }
-    </style>
+
+
 @stop
 
+@section('js')
+
+@stop

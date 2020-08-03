@@ -23,7 +23,7 @@ class FeedController extends Controller
 
     public function search(Request $request, $lang = 'en')
     {
-        $keywords=trim($request->keywords);
+        $keywords = trim($request->keywords);
         $feeds = Feed::where('lang', $lang)->Where('name', 'LIKE', '%' . $keywords . '%')
             ->orWhere('email', 'LIKE', '%' . $keywords . '%')
             ->with('category')
@@ -34,55 +34,58 @@ class FeedController extends Controller
 
     public function deepSearch(Request $request)
     {
-        $keywords=trim($request->keywords);
-        if($request->category_id!=0 and $request->city!='0'){
+        if ($request->keywords == "") {
+            $feeds = [];
+            return $feeds;
+        }
+        $keywords = trim($request->keywords);
+        if ($request->category_id != '0' and $request->city != '0') {
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
-                ->where('category_id',$request->category_id)
-                ->where('city',$request->city)
-                ->orWhere(function ($query)use ($request){
+                ->where('category_id', $request->category_id)
+                ->where('city', $request->city)
+                ->orWhere(function ($query) use ($request) {
                     $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
-                        ->where('city',$request->city)
-                        ->where('category_id',$request->category_id);
+                        ->where('city', $request->city)
+                        ->where('category_id', $request->category_id);
                 })
                 ->with('category')
-                ->orderBy('rate','DESC')
-                ->orderBy('recommended','DESC')
-                ->orderBy('views','DESC')
+                ->orderBy('rate', 'DESC')
+                ->orderBy('recommended', 'DESC')
+                ->orderBy('views', 'DESC')
                 ->paginate(50);
-        }elseif ($request->category_id!=0){
+        } elseif ($request->category_id != '0') {
 
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
-                ->where('category_id',$request->category_id)
-                ->orWhere(function ($query)use ($request){
+                ->where('category_id', $request->category_id)
+                ->orWhere(function ($query) use ($request) {
                     $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
-                        ->where('category_id',$request->category_id);
+                        ->where('category_id', $request->category_id);
                 })
                 ->with('category')
-                ->orderBy('rate','DESC')
-                ->orderBy('recommended','DESC')
-                ->orderBy('views','DESC')
+                ->orderBy('rate', 'DESC')
+                ->orderBy('recommended', 'DESC')
+                ->orderBy('views', 'DESC')
                 ->paginate(50);
-
-        }elseif($request->city!='0'){
+        } elseif ($request->city != '0') {
 
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
-                ->where('city',$request->city)
-                ->orWhere(function ($query)use ($request){
+                ->where('city', $request->city)
+                ->orWhere(function ($query) use ($request) {
                     $query->where('tags', 'LIKE', '%' . $request->keywords . '%')
-                        ->where('city',$request->city);
+                        ->where('city', $request->city);
                 })
                 ->with('category')
-                ->orderBy('rate','DESC')
-                ->orderBy('recommended','DESC')
-                ->orderBy('views','DESC')
+                ->orderBy('rate', 'DESC')
+                ->orderBy('recommended', 'DESC')
+                ->orderBy('views', 'DESC')
                 ->paginate(50);
-        }else{
+        } else {
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
                 ->orWhere('tags', 'LIKE', '%' . $request->keywords . '%')
                 ->with('category')
-                ->orderBy('rate','DESC')
-                ->orderBy('recommended','DESC')
-                ->orderBy('views','DESC')
+                ->orderBy('rate', 'DESC')
+                ->orderBy('recommended', 'DESC')
+                ->orderBy('views', 'DESC')
                 ->paginate(50);
         }
 

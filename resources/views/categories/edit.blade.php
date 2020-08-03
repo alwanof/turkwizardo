@@ -203,13 +203,13 @@
             $image_crop = $('#image_demo').croppie({
                 enableExif: true,
                 viewport: {
-                    width:300,
-                    height:170,
+                    width:250,
+                    height:250,
                     type:'square' //square
                 },
                 boundary:{
-                    width:310,
-                    height:180
+                    width:260,
+                    height:260
                 },
 
             });
@@ -220,10 +220,10 @@
                 $image_crop.croppie('result', {
                     type: 'canvas',
                     size:{
-                        width:1200,
-                        hidden:675
+                        width:250,
+                        hidden:250
                     },
-                    format:'jpeg',
+                    format:'png',
                     quality:0.7
                 }).then(function(response){
                     //var rand=Math.floor(Math.random()*1000000);

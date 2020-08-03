@@ -112,7 +112,7 @@
                             <div class="card-body text-center">
                                 <div class="cropU">
                                     <div id="placeholder">
-                                        <img src="{{asset('storage/uploads/categories/cover/0.jpg')}}" class="img-thumbnail" />
+                                        <img src="{{asset('storage/uploads/categories/cover/0.png')}}" class="img-thumbnail" />
                                         <div class="spinner-border text-primary loading" style="display:none" role="status">
                                             <span class="sr-only">Loading...</span>
                                         </div>
@@ -205,13 +205,13 @@
             $image_crop = $('#image_demo').croppie({
                 enableExif: true,
                 viewport: {
-                    width:300,
-                    height:125,
+                    width:250,
+                    height:250,
                     type:'square' //square
                 },
                 boundary:{
-                    width:310,
-                    height:130
+                    width:260,
+                    height:260
                 },
 
             });
@@ -222,10 +222,10 @@
                 $image_crop.croppie('result', {
                     type: 'canvas',
                     size:{
-                        width:1920,
-                        height:800
+                        width:250,
+                        height:250
                     },
-                    format:'jpeg',
+                    format:'png',
                     quality:0.7
                 }).then(function(response){
                     //var rand=Math.floor(Math.random()*1000000);

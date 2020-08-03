@@ -11,7 +11,7 @@ if (isset($_POST["image"])) {
 
     $data = base64_decode($image_array_2[1]);
 
-    $imageName = ((isset($_GET['title'])) ? $_GET['title'] : time()) . '.jpg';
+    $imageName = ((isset($_GET['title'])) ? $_GET['title'] : time()) . '.png';
 
     file_put_contents('storage/uploads/categories/cover/' . $imageName, $data);
 

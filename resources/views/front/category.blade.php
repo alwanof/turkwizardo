@@ -44,7 +44,7 @@
                             <h2 class="font-24">
                                 <img src="{{ $feed->cover }}" alt="{{ $feed->name }}" title="{{ $feed->name }}"
                                     class="img-thumbnail rounded-circle" width="42">
-                                <a href="factory/{{ $feed->slug }}">{{ $feed->name }}</a>
+                                <a href="{{ url('factory/' . $feed->slug) }}">{{ $feed->name }}</a>
                                 <span class="float-right font-14"><a href="#"
                                         class="color-highlight">{{ $feed->city }}</a></span>
                             </h2>

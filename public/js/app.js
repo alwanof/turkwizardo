@@ -36074,7 +36074,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
- //gd1dgfax6fcw
+ //gd1dgfax6fcw@160.153.129.213
 //php artisan lang:js resources/lang/vue-translations.json --json
 //git push origin HEAD:master
 // const files = require.context('./', true, /\.vue$/i)

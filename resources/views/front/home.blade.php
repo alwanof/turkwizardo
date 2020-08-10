@@ -36,7 +36,9 @@
         <div class="col-md-4">
             <div class="card card-style">
                 <div class="p-3 text-center">
-                    <img src="{{ asset('pwa/images/careers/3.png') }}" class="img-fluid rounded-m shadow-l mb-4">
+                    <a href="{{ route('requests.index') }}"><img src="{{ asset('pwa/images/careers/3.png') }}"
+                            class="img-fluid rounded-m shadow-l mb-4"></a>
+
                     <h2 class="font-30 mb-n1">{{ __('fronthome.menu.serviceATitle') }} </h2>
                     <p class="color-highlight mb-3 font-12">{{ __('fronthome.menu.free') }}</p>
                     <p class="mb-4">{{ __('fronthome.menu.serviceA') }}</p>
@@ -48,11 +50,13 @@
         <div class="col-md-4">
             <div class="card card-style">
                 <div class="p-3 text-center">
-                    <img src="{{ asset('pwa/images/careers/2.png') }}" class="img-fluid rounded-m shadow-l mb-4">
+                    <a href="#" data-menu="menu-form"><img src="{{ asset('pwa/images/careers/2.png') }}"
+                            class="img-fluid rounded-m shadow-l mb-4"></a>
+
                     <h2 class="font-30 mb-n1">{{ __('fronthome.menu.serviceBTitle') }} </h2>
                     <p class="color-blue2-dark mb-3 font-12">{{ __('fronthome.menu.free') }}</p>
                     <p class="mb-4">{{ __('fronthome.menu.serviceB') }}</p>
-                    <a href="#"
+                    <a href="#" data-menu="menu-form"
                         class="btn btn-full btn-m rounded-sm text-uppercase font-900 shadow-xl bg-violet-dark">{{ __('fronthome.menu.serviceBTN') }}</a>
                 </div>
             </div>
@@ -60,7 +64,9 @@
         <div class="col-md-4">
             <div class="card card-style">
                 <div class="p-3 text-center">
-                    <img src="{{ asset('pwa/images/careers/1.png') }}" class="img-fluid rounded-m shadow-l mb-4">
+                    <a href="{{ url('/pages/almedoan-129318') }}"><img src="{{ asset('pwa/images/careers/1.png') }}"
+                            class="img-fluid rounded-m shadow-l mb-4"></a>
+
                     <h2 class="font-30 mb-n1">{{ __('fronthome.menu.serviceCTitle') }} </h2>
                     <p class="color-orange-dark mb-3 font-12">{{ __('fronthome.menu.paid') }}</p>
                     <p class="mb-4">{{ __('fronthome.menu.serviceC') }}</p>

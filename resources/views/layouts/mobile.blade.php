@@ -62,7 +62,7 @@
                     <img src="{{ asset('img/png//logo.png') }}" width="100px">
                 </a>
                 <a href="#" data-menu="menu-lang" class="header-icon header-icon-1"><i
-                        class="fas fa-globe-americas font-18"></i></a>
+                        class="fas fa-language font-24"></i></a>
                 <a href="#" data-menu="menu-share" class="header-icon header-icon-2"><i
                         class="fas fa-share-alt font-18"></i></a>
 
@@ -85,10 +85,7 @@
             <div class="page-content header-clear-medium">
                 @yield('content')
                 <div class="footer card card-style">
-                    <a href="#" class="footer-title"><span class="color-highlight">StickyMobile</span></a>
-                    <p class="footer-text"><span>Made with <i class="fa fa-heart color-highlight font-16 pl-2 pr-2"></i>
-                            by Enabled</span><br><br>Powered by the best Mobile Website Developer on Envato Market.
-                        Elite Quality. Elite Products.</p>
+
                     <div class="text-center mb-3">
                         <a href="https://www.facebook.com/turkwizard"
                             class="icon icon-xs rounded-sm shadow-l mr-1 bg-facebook"><i
@@ -105,7 +102,8 @@
                         <a href="#" class="back-to-top icon icon-xs rounded-sm shadow-l bg-dark1-light"><i
                                 class="fa fa-angle-up"></i></a>
                     </div>
-                    <p class="footer-copyright">Copyright &copy; Enabled <span id="copyright-year">2017</span>. All
+                    <p class="footer-copyright">Copyright &copy; turkwizard.com <span id="copyright-year">2017</span>.
+                        All
                         Rights Reserved.</p>
                     <p class="footer-links"><a href="#" class="color-highlight">Privacy Policy</a> | <a href="#"
                             class="color-highlight">Terms and Conditions</a> | <a href="#"

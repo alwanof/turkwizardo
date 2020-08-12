@@ -9,9 +9,9 @@ return [
             'free' => 'Free Services',
             'paid' => 'Paid Services'
         ],
-        'serviceA' => 'Add a purchase order for free ',
-        'serviceB' => 'Get a factories list for free',
-        'serviceC' => 'Follow the deal completely and get a prices list ',
+        'serviceA' => 'Add a purchase order',
+        'serviceB' => 'Ask a list of Factories ',
+        'serviceC' => 'Following up the purchase order on your behalf',
         'serviceBTN' => 'APPLY HERE',
         'serviceModalTitle' => 'Fill the following form',
         'show_all' => 'Show All',
@@ -31,9 +31,14 @@ return [
         'paid' => 'Paid',
         'select_category' => 'Category Filter',
         'select_city' => 'City Filter',
-        'options' => 'Search Options',
-        'all' => 'All',
-        'languages' => 'Languages Available'
+        'options' => 'Filter',
+        'allcities' => 'All Cities',
+        'allcats' => 'All Categories',
+        'languages' => 'Languages Available',
+        'categories' => 'Sections',
+        'cat1' => 'TURKWİZARD guide for Turkish factories',
+        'cat2' => 'Each section contains the reliable Turkish factories',
+        'refrences' => 'You may be like this'
 
     ],
 

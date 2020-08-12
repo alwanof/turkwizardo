@@ -104,10 +104,10 @@
 
     <div class="card card-style">
         <div class="content mb-0">
-            <h1 class="text-center mb-0">Categories</h1>
-            <p class="text-center color-highlight font-11 mt-n1">The Absolute Best Products &amp; Care for You</p>
+            <h1 class="text-center mb-0">{{ __('fronthome.menu.categories') }}</h1>
+            <p class="text-center color-highlight font-11 mt-n1">{{ __('fronthome.menu.cat1') }}</p>
             <p class="boxed-text-xl mt-n3">
-                Over 10 years of Experience in Building Gorgeous Products only for you! We are Envato Elite.
+                {{ __('fronthome.menu.cat2') }}
             </p>
             <div class="divider"></div>
         </div>

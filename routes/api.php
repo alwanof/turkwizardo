@@ -22,6 +22,7 @@ Route::get('/user', function (Request $request) {
 //Route::get('lang/feeds/{lang?}', 'API\FeedController@index');
 Route::post('front/form/forward', 'API\FrontformController@forward')->name('front.form.forward');
 Route::get('search/deep/feeds', 'API\FeedController@deepSearch');
+Route::get('ref/{lang}/{cat}/{city}', 'API\FeedController@reference');
 Route::group(['middleware' => ['auth:api']], function () {
     Route::apiResource('users', 'API\UserController');
     Route::get('search/users', 'API\UserController@search');
@@ -33,8 +34,4 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('search/categories/{lang?}', 'API\CategoryController@search');
     Route::get('search/leads', 'API\LeadController@search');
     Route::apiResource('leads', 'API\LeadController');
-
-
 });
-
-

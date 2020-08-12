@@ -31,6 +31,14 @@ class StartController extends Controller
         return view('front.home', compact(['sections', 'categories', 'cities']));
     }
 
+    function setLang($lang)
+    {
+        App::setLocale($lang);
+        session(['lang' => $lang]);
+        return view('front.lang');
+        //return redirect('/');
+    }
+
 
 
 

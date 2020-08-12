@@ -139,7 +139,7 @@
                     <div class="list-group list-custom-small">
                         <a href="{{ route('lang', 'tr') }}" class="pb-2 ml-n1">
                             <i class="flag-icon flag-icon-tr font-18 rounded-s  mr-3"></i>
-                            <span>Turkye</span>
+                            <span>Türkçe</span>
                         </a>
                     </div>
                 </div>

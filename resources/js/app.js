@@ -41,6 +41,7 @@ const CONFIG = {
     //PATH: '/turkwizard/public',
     API_URL: http + window.location.hostname + '/public/api/',
     PATH: '/public',
+    FULL_PATH: 'https://' + window.location.hostname + '/public',
     LANG: translations
 }
 

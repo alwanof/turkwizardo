@@ -11,15 +11,12 @@
 |
 */
 
-//use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\App;
 
-Route::get('lang/set/{lang}', function ($lang) {
-    App::setLocale($lang);
-    session(['lang' => $lang]);
-    return redirect('/')->with('alert', __('alerts.LANGUAGE_CHANGED'));
-})->name('lang');
+
+Route::get('lang/set/{lang}', "StartController@setLang")->name('lang');
 
 
 
@@ -32,7 +29,7 @@ Route::middleware('lang')->group(function () {
     Route::get('/archive/{demand}', 'DemandController@archive')->name('requests.archive');
 
 
-    Route::get('/factory/{hash}','FeedController@show' )->name('feeds.show');
+    Route::get('/factory/{hash}', 'FeedController@show')->name('feeds.show');
     Route::get('/category/{hash}', 'CategoryController@show')->name('category.show');
     Auth::routes();
 });
@@ -51,7 +48,4 @@ Route::prefix('admin')->group(function () {
     Route::post('/feed/store', 'FeedController@store')->name('feeds.store');
     Route::post('/category/store', 'CategoryController@store')->name('categories.store');
     Route::get('/leads', 'LeadController@index')->name('leads');
-
 });
-
-

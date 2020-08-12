@@ -31,6 +31,22 @@ class FeedController extends Controller
 
         return $feeds;
     }
+    public function reference($lang, $cat, $city)
+    {
+
+        if ($cat == 'all') $cat = '';
+        if ($city == 'all') $city = '';
+
+        $feeds = Feed::where('lang', $lang)->Where('lang', $lang)
+            ->where('category_id', 'LIKE', '%' . $cat . '%')
+            ->where('city', 'LIKE', '%' . $city . '%')
+            ->with('category')
+            ->inRandomOrder()
+            ->get()
+            ->take(10);
+
+        return $feeds;
+    }
 
     public function deepSearch(Request $request)
     {
@@ -39,7 +55,7 @@ class FeedController extends Controller
             return $feeds;
         }
         $keywords = trim($request->keywords);
-        if ($request->category_id != '0' and $request->city != '0') {
+        if ($request->category_id != 'all' and $request->city != 'all') {
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
                 ->where('category_id', $request->category_id)
                 ->where('city', $request->city)
@@ -53,7 +69,7 @@ class FeedController extends Controller
                 ->orderBy('recommended', 'DESC')
                 ->orderBy('views', 'DESC')
                 ->paginate(50);
-        } elseif ($request->category_id != '0') {
+        } elseif ($request->category_id != 'all') {
 
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
                 ->where('category_id', $request->category_id)
@@ -66,7 +82,7 @@ class FeedController extends Controller
                 ->orderBy('recommended', 'DESC')
                 ->orderBy('views', 'DESC')
                 ->paginate(50);
-        } elseif ($request->city != '0') {
+        } elseif ($request->city != 'all') {
 
             $feeds = Feed::Where('name', 'LIKE', '%' . $request->keywords . '%')
                 ->where('city', $request->city)

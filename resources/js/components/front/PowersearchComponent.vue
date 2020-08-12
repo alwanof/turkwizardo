@@ -20,13 +20,13 @@
           disabled
           selected
         >{{ local[lang+'.fronthome']['menu']['select_category'] }}</option>
-        <option value="0">{{ local[lang+'.fronthome']['menu']['all'] }}</option>
+        <option value="all">{{ local[lang+'.fronthome']['menu']['allcats'] }}</option>
         <option v-for="category in categories" :value="category.id">{{category.name}}</option>
       </select>
       <div class="border-top"></div>
       <select class="form-control mt-1 border-0" v-model="filterCity" v-show="filter.city">
         <option value="-1" disabled selected>{{local[lang+'.fronthome']['menu']['select_city']}}</option>
-        <option value="0">{{ local[lang+'.fronthome']['menu']['all'] }}</option>
+        <option value="all">{{ local[lang+'.fronthome']['menu']['allcities'] }}</option>
         <option v-for="cityitem in cities" :value="cityitem.city">{{cityitem.city}}</option>
       </select>
 
@@ -43,6 +43,12 @@
       <div class="content">
         <div class="p-1 border-bottom" v-for="feed in feeds.data" :key="feed.id">
           <h2 class="font-24">
+            <img
+              :src="feed.cover"
+              class="img-thumbnail rounded-circle"
+              width="42px"
+              :alt="feed.name"
+            />
             <a :href="'factory/'+feed.slug">{{feed.name}}</a>
           </h2>
           <p class="m-1 font-12">
@@ -63,6 +69,32 @@
         </div>
       </div>
     </div>
+    <!-- you may like -->
+    <div class="card mt-3 card-style shadow-l" v-show="keywords && keywords.length>2">
+      <div class="content">
+        <h2>{{ local[lang+'.fronthome']['menu']['refrences'] }}</h2>
+        <hr />
+        <div class="p-1 border-bottom" v-for="feed in refs" :key="feed.id">
+          <h2 class="font-24">
+            <img
+              :src="feed.cover"
+              class="img-thumbnail rounded-circle"
+              width="42px"
+              :alt="feed.name"
+            />
+            <a :href="'factory/'+feed.slug">{{feed.name}}</a>
+          </h2>
+          <p class="m-1 font-12">
+            <a :href="'category/'+feed.category.hash" class="color-highlight">{{feed.category.name}}</a>,
+            <a href="#" class="color-highlight">{{feed.city}}</a>
+          </p>
+          <span class="exerpt efade" @click="showMore">
+            {{feed.tags.substring(0, 50)}}
+            <span>{{feed.tags.substring(50, 320)}}</span>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -73,14 +105,17 @@ export default {
   data() {
     return {
       path: CONFIG.PATH,
+      fullPath: CONFIG.FULL_PATH,
       loading: false,
       local: CONFIG.LANG,
       errors: [],
       feeds: [],
+      refs: [],
+      proposalFeeds: [],
       dataSize: 0,
       keywords: null,
-      filterCity: "0",
-      filterCat: "0",
+      filterCity: "all",
+      filterCat: "all",
       filter: {
         cat: false,
         city: false,
@@ -92,13 +127,16 @@ export default {
     keywords(after, before) {
       if (this.keywords.length > 2 || this.keywords.length === 0) {
         this.getResults();
+        this.getRef();
       }
     },
     filterCity(after, before) {
       this.getResults();
+      this.getRef();
     },
     filterCat(after, before) {
       this.getResults();
+      this.getRef();
     },
   },
   methods: {
@@ -122,6 +160,24 @@ export default {
         .then((res) => {
           this.feeds = res.data;
           this.dataSize = res.data.hasOwnProperty("total") ? res.data.total : 0;
+          this.loading = false;
+        });
+    },
+    getRef() {
+      this.loading = true;
+
+      axios
+        .get(
+          CONFIG.API_URL +
+            "ref/" +
+            this.lang +
+            "/" +
+            this.filterCat +
+            "/" +
+            this.filterCity
+        )
+        .then((res) => {
+          this.refs = res.data;
           this.loading = false;
         });
     },

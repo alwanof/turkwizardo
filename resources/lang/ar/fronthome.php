@@ -24,16 +24,20 @@ return [
         'categories' => 'الأقسام',
         'city' => 'المدينة',
         'category' => 'القسم',
-        'serviceATitle' => 'Add a purchase',
-        'serviceBTitle' => 'Factories List',
-        'serviceCTitle' => 'Follow the deal',
+        'serviceATitle' => 'أضف طلب شراء',
+        'serviceBTitle' => 'اطلب قائمة مصانع',
+        'serviceCTitle' => 'متابعة طلب الشراء بالنيابة عنكم',
         'free' => 'Free',
         'paid' => 'Paid',
         'select_category' => 'Category Filter',
         'select_city' => 'City Filter',
-        'options' => 'Search Options',
+        'options' => 'فلتر ',
         'all' => 'All',
-        'languages'=>'Languages Available'
+        'languages' => 'Languages Available',
+        'categories' => 'الأقسام ',
+        'cat1' => 'دليل ترك وزرد للمصانع ',
+        'cat2' => 'يحتوي كل قسم على المصانع التركية الموثوقة ',
+        'refrences' => 'ربما تكون مهتم بالنتائج التالية'
 
 
 

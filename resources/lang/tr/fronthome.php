@@ -9,9 +9,9 @@ return [
             'free' => 'Ücretsiz hizmet',
             'paid' => 'Ücretli hizmetler'
         ],
-        'serviceA' => 'Ücretsiz İsteğinizi Ekleyin',
-        'serviceB' => 'Ücretsiz fabrikalar listesi alın',
-        'serviceC' => 'Anlaşmayı sizin adınıza takip ediyor ve fiyat teklifleri alıyoruz',
+        'serviceA' => 'Satınalma siparişi ekleyin',
+        'serviceB' => 'Fabrikaların bir listesini İsteyin',
+        'serviceC' => 'Satın alma siparişini sizin adınıza takip etmek.',
         'serviceBTN' => 'Seçin',
         'serviceModalTitle' => 'Aşağıdaki formu doldurun',
         'show_all' => 'Hepsini Göster',
@@ -31,9 +31,13 @@ return [
         'paid' => 'Paid',
         'select_category' => 'Category Filter',
         'select_city' => 'City Filter',
-        'options' => 'Search Options',
+        'options' => 'Filter',
         'all' => 'All',
-        'languages'=>'Languages Available'
+        'languages' => 'Languages Available',
+        'categories' => 'Bölümler ',
+        'cat1' => 'TÜRKWİZARD Türk fabrikaları rehberi',
+        'cat2' => 'Her bölüm güvenilir Türk fabrikaları içerir',
+        'refrences' => 'You may be like this'
 
 
 

@@ -42,6 +42,11 @@ $(document).ready(function() {
 
     function init_template() {
 
+
+        var imported = document.createElement('script');
+        imported.src = 'http://localhost/turkwizard/public/js/app.js';
+        document.head.appendChild(imported);
+
         //ADD YOUR CUSTOM JAVASCRIPT CODES HERE!
         //Do not put inside HTML files.
         //The init_template() function will be triggered when pages open.

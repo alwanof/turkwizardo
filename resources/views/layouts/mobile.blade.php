@@ -16,6 +16,7 @@
 
     </script>
 
+
     <!-- Required meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -282,7 +283,7 @@
         <script type="text/javascript" src="{{ asset('pwa/scripts/custom.js') }}"></script>
     @endif
 
-    <script src="{{ asset('js/app.js') }}"></script>
+
     @yield('js')
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -300,6 +301,13 @@
 
     </script>
     <!--End of Tawk.to Script-->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
+    <script>
+        console.log('hi');
+
+    </script>
+
 </body>
 
 </html>

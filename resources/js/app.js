@@ -37,11 +37,11 @@ if (location.protocol !== 'https:') {
 
 
 const CONFIG = {
-    //API_URL: http + window.location.hostname + '/turkwizard/public/api/',
-    //PATH: '/turkwizard/public',
-    API_URL: http + window.location.hostname + '/public/api/',
-    PATH: '/public',
-    FULL_PATH: 'https://' + window.location.hostname + '/public',
+    API_URL: http + window.location.hostname + '/turkwizard/public/api/',
+    PATH: '/turkwizard/public',
+    //API_URL: http + window.location.hostname + '/public/api/',
+    //PATH: '/public',
+    FULL_PATH: 'http://' + window.location.hostname + '/public',
     LANG: translations
 }
 

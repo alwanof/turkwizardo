@@ -15,7 +15,10 @@ class StartController extends Controller
 {
     public function index()
     {
+
+
         $lang = session('lang');
+
         $sections = Section::where('lang', $lang)->get();
         //$recos = Feed::where('lang', $lang)->orderBy('recommended', 'desc')->take(8)->get();
         //$pops = Feed::where('lang', $lang)->orderBy('views', 'desc')->take(6)->get();
@@ -27,6 +30,7 @@ class StartController extends Controller
             ->get();
 
         //$demands=Demand::where('category_id','!=',0)->where('status',1)->latest()->take(3)->get();
+
 
         return view('front.home', compact(['sections', 'categories', 'cities']));
     }

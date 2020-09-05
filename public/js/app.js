@@ -36235,11 +36235,11 @@ if (location.protocol !== 'https:') {
 }
 
 var CONFIG = {
-  //API_URL: http + window.location.hostname + '/turkwizard/public/api/',
-  //PATH: '/turkwizard/public',
-  API_URL: http + window.location.hostname + '/public/api/',
-  PATH: '/public',
-  FULL_PATH: 'https://' + window.location.hostname + '/public',
+  API_URL: http + window.location.hostname + '/turkwizard/public/api/',
+  PATH: '/turkwizard/public',
+  //API_URL: http + window.location.hostname + '/public/api/',
+  //PATH: '/public',
+  FULL_PATH: 'http://' + window.location.hostname + '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };
 /* harmony default export */ __webpack_exports__["default"] = (CONFIG);
@@ -36881,8 +36881,8 @@ module.exports = JSON.parse("{\"ar.alert\":{\"success_demand_added\":\"Your requ
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\turkwizard\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\turkwizard\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/turkwizard/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/turkwizard/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -36232,13 +36232,14 @@ var http = 'https://';
 
 if (location.protocol !== 'https:') {
   http = 'http://';
-}
+} // ssh gd1dgfax6fcw@160.153.129.213
+
 
 var CONFIG = {
-  API_URL: http + window.location.hostname + '/turkwizard/public/api/',
-  PATH: '/turkwizard/public',
-  //API_URL: http + window.location.hostname + '/public/api/',
-  //PATH: '/public',
+  //API_URL: http + window.location.hostname + '/turkwizard/public/api/',
+  //PATH: '/turkwizard/public',
+  API_URL: http + window.location.hostname + '/public/api/',
+  PATH: '/public',
   FULL_PATH: 'http://' + window.location.hostname + '/public',
   LANG: _lang_vue_translations_json__WEBPACK_IMPORTED_MODULE_0__
 };

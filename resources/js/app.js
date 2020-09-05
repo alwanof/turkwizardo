@@ -35,12 +35,12 @@ if (location.protocol !== 'https:') {
     http = 'http://';
 }
 
-
+// ssh gd1dgfax6fcw@160.153.129.213
 const CONFIG = {
-    API_URL: http + window.location.hostname + '/turkwizard/public/api/',
-    PATH: '/turkwizard/public',
-    //API_URL: http + window.location.hostname + '/public/api/',
-    //PATH: '/public',
+    //API_URL: http + window.location.hostname + '/turkwizard/public/api/',
+    //PATH: '/turkwizard/public',
+    API_URL: http + window.location.hostname + '/public/api/',
+    PATH: '/public',
     FULL_PATH: 'http://' + window.location.hostname + '/public',
     LANG: translations
 }

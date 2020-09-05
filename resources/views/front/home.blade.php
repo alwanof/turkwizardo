@@ -140,7 +140,7 @@
 @section('css')
     <style>
         .efade {
-            background-image: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0));
+            background-image: linear-gradient(181deg, #000000 0%, rgba(0, 0, 0, 0));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
